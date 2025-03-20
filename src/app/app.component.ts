@@ -6,10 +6,11 @@ import { DividerComponent } from "./divider/divider.component";
 import { DeferrableComponent } from "./deferrable/deferrable.component";
 import { OptimizedImageComponent } from "./optimized-image/optimized-image.component";
 import { TemplateFormComponent } from "./template-form/template-form.component";
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent, DeferrableComponent, OptimizedImageComponent, TemplateFormComponent],
+  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent, DeferrableComponent, OptimizedImageComponent, TemplateFormComponent, ReactiveFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
