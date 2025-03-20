@@ -1,12 +1,43 @@
+<p>Control flows / conditionals / for loops / switch case</p>
 @if(hasPassedExam) {
     <p>User passed the exam!</p>
 } @else {
     <p>User failed the exam!</p>
 }
 
+<!-- 
+The track expression allows Angular to maintain a relationship between your data and the DOM nodes on the page. 
+ This allows Angular to optimize performance by executing the minimum necessary DOM operations when the data changes.
+ Use an id/uuid property whenever possible
+
+ For static values, use the implicit $index variable!
+ -->
 @for (exam of exams; track exam) {
     <p>{{ exam }}:  @if(hasPassedExam){ PASSED } @else { FAILED }</p>
+    <p><i>The for loop also has some implicit variables which you can access! 
+        -> index={{$index}}, count={{$count}}, first={{$first}}, last={{$last}}, even={{$even}}, odd={{$odd}}</i></p>
+} @empty {
+    <p>No exams are present.</p>
 }
+
+
+<p>current exam: @switch (currentExam) {
+    @case (Exam.Math) {
+        Math 4 IT
+    }
+    @case (Exam.PE) {
+        Physical Education
+    }
+    @case (Exam.Programming) {
+        Programming basics
+    }
+    @case (Exam.Dutch) {
+        Dutch essentials year 1
+    }
+    @default {
+        Unknown exam
+    }
+}</p>
 
 <p>{{prediction}}</p>
 
