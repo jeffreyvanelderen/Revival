@@ -4,10 +4,11 @@ import { InputOutputComponent } from "./input-output/input-output.component";
 import { ConditionalsComponent } from "./conditionals/conditionals.component";
 import { DividerComponent } from "./divider/divider.component";
 import { DeferrableComponent } from "./deferrable/deferrable.component";
+import { OptimizedImageComponent } from "./optimized-image/optimized-image.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent, DeferrableComponent],
+  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent, DeferrableComponent, OptimizedImageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
