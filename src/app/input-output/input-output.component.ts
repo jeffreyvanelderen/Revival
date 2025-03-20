@@ -20,7 +20,7 @@ export class InputOutputComponent {
   // You can call this via the template or via the methods below using like so: <button (onclick)="onSubmitEvent.emit('Button was pressed!')" ></button>
 
   // parent component uses this event like so: <app-input-output (onSubmitEvent)="onReceiveDidSubmitEvent($event)" />
-  @Output() onSubmitEvent: EventEmitter<string> = new EventEmitter();
+  @Output() onSubmitEvent: EventEmitter<string> = new EventEmitter<string>();
 
   // Dependency injection via constructor, also possible via Inject();
   constructor(private hobbyService: HobbyService) {
@@ -28,7 +28,7 @@ export class InputOutputComponent {
   }
 
   // Same as directly calling this in the template
-  onPressSubmit() {
-    this.onSubmitEvent.emit('Button was pressed!');
+  onPressSubmit(value: string) {
+    this.onSubmitEvent.emit('Button was pressed!' + value);
   }
 }
