@@ -10,21 +10,23 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { PipeUsageComponent } from "./pipe-usage/pipe-usage.component";
 import {Breakpoints} from '@angular/cdk/layout';
 import { ResponsiveItemComponent } from './responsive-item/responsive-item.component';
+import { SignalComponent } from "./signal/signal.component";
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet, 
-    InputOutputComponent, 
-    ControlFlowsComponent, 
-    DividerComponent, 
-    DeferrableComponent, 
-    OptimizedImageComponent, 
-    TemplateFormComponent, 
-    ReactiveFormComponent, 
+    RouterOutlet,
+    InputOutputComponent,
+    ControlFlowsComponent,
+    DividerComponent,
+    DeferrableComponent,
+    OptimizedImageComponent,
+    TemplateFormComponent,
+    ReactiveFormComponent,
     PipeUsageComponent,
     ResponsiveItemComponent,
-  ],
+    SignalComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
