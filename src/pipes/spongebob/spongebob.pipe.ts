@@ -10,9 +10,8 @@ export class SpongebobPipe implements PipeTransform {
 
     for (let i = 0; i < value.length; i++) {
       const isEven = i % 2 === 0;
-      spongebobText += isEven ? value[i].toUpperCase() : value[i].toLocaleLowerCase();
+      spongebobText += isEven ? value[i].toUpperCase() : value[i].toLowerCase();
     }
-
     
     return spongebobText;
   }
