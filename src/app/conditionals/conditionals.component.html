@@ -1,0 +1,15 @@
+@if(hasPassedExam) {
+    <p>User passed the exam!</p>
+} @else {
+    <p>User failed the exam!</p>
+}
+
+@for (exam of exams; track exam) {
+    <p>{{ exam }}:  @if(hasPassedExam){ PASSED } @else { FAILED }</p>
+}
+
+<p>{{prediction}}</p>
+
+<button (click)="takeExam()" (mouseover)="prediction = hasPassedExam ? 'you will fail...' : 'you will succeed...'">
+    <p>Take exam...</p>
+</button>
