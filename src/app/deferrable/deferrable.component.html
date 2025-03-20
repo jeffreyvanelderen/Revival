@@ -1,0 +1,12 @@
+
+@defer (on viewport) {
+    <p>Expensive component loaded</p>
+} @placeholder (minimum 5s) {
+    <div>
+        <p>This is the placeholder that will show <i>before the deferred loading starts</i> - EAGERLY LOADED</p>
+        <div class="loader"></div>
+    </div>
+} @loading (minimum 5s) {
+    <p>This loading content will show WHILE the deferred content is actively being fetched. - EAGERLY LOADED</p>
+    <div class="loader"></div>
+}

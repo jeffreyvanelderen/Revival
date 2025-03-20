@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { InputOutputComponent } from "./input-output/input-output.component";
 import { ConditionalsComponent } from "./conditionals/conditionals.component";
 import { DividerComponent } from "./divider/divider.component";
+import { DeferrableComponent } from "./deferrable/deferrable.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent],
+  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent, DeferrableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
