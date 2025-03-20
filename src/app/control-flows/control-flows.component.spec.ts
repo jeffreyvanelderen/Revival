@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConditionalsComponent } from './conditionals.component';
+import { ControlFlowsComponent } from './control-flows.component';
 
-describe('ConditionalsComponent', () => {
-  let component: ConditionalsComponent;
-  let fixture: ComponentFixture<ConditionalsComponent>;
+describe('ControlFlowsComponent', () => {
+  let component: ControlFlowsComponent;
+  let fixture: ComponentFixture<ControlFlowsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConditionalsComponent]
+      imports: [ControlFlowsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ConditionalsComponent);
+    fixture = TestBed.createComponent(ControlFlowsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

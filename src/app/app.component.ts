@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InputOutputComponent } from "./input-output/input-output.component";
-import { ConditionalsComponent } from "./conditionals/conditionals.component";
+import { ControlFlowsComponent } from "./control-flows/control-flows.component";
 import { DividerComponent } from "./divider/divider.component";
 import { DeferrableComponent } from "./deferrable/deferrable.component";
 import { OptimizedImageComponent } from "./optimized-image/optimized-image.component";
@@ -11,7 +11,7 @@ import { PipeUsageComponent } from "./pipe-usage/pipe-usage.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent, DeferrableComponent, OptimizedImageComponent, TemplateFormComponent, ReactiveFormComponent, PipeUsageComponent],
+  imports: [RouterOutlet, InputOutputComponent, ControlFlowsComponent, DividerComponent, DeferrableComponent, OptimizedImageComponent, TemplateFormComponent, ReactiveFormComponent, PipeUsageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

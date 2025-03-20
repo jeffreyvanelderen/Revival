@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-conditionals',
+  selector: 'app-control-flows',
   imports: [],
-  templateUrl: './conditionals.component.html',
-  styleUrl: './conditionals.component.scss'
+  templateUrl: './control-flows.component.html',
+  styleUrl: './control-flows.component.scss'
 })
-export class ConditionalsComponent {
+export class ControlFlowsComponent {
 
   /*
   This exposes the Exam enum to the TEMPLATE! so you can use Exam.X in the template SWITCH cases instead of using string literals!
