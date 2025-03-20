@@ -8,10 +8,23 @@ import { OptimizedImageComponent } from "./optimized-image/optimized-image.compo
 import { TemplateFormComponent } from "./template-form/template-form.component";
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { PipeUsageComponent } from "./pipe-usage/pipe-usage.component";
+import {Breakpoints} from '@angular/cdk/layout';
+import { ResponsiveItemComponent } from './responsive-item/responsive-item.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, InputOutputComponent, ControlFlowsComponent, DividerComponent, DeferrableComponent, OptimizedImageComponent, TemplateFormComponent, ReactiveFormComponent, PipeUsageComponent],
+  imports: [
+    RouterOutlet, 
+    InputOutputComponent, 
+    ControlFlowsComponent, 
+    DividerComponent, 
+    DeferrableComponent, 
+    OptimizedImageComponent, 
+    TemplateFormComponent, 
+    ReactiveFormComponent, 
+    PipeUsageComponent,
+    ResponsiveItemComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
