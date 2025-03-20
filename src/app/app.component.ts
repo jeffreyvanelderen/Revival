@@ -5,10 +5,11 @@ import { ConditionalsComponent } from "./conditionals/conditionals.component";
 import { DividerComponent } from "./divider/divider.component";
 import { DeferrableComponent } from "./deferrable/deferrable.component";
 import { OptimizedImageComponent } from "./optimized-image/optimized-image.component";
+import { TemplateFormComponent } from "./template-form/template-form.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent, DeferrableComponent, OptimizedImageComponent],
+  imports: [RouterOutlet, InputOutputComponent, ConditionalsComponent, DividerComponent, DeferrableComponent, OptimizedImageComponent, TemplateFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
