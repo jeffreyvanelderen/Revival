@@ -11,6 +11,7 @@ import { PipeUsageComponent } from "./pipe-usage/pipe-usage.component";
 import {Breakpoints} from '@angular/cdk/layout';
 import { ResponsiveItemComponent } from './responsive-item/responsive-item.component';
 import { SignalComponent } from "./signal/signal.component";
+import { AttributeComponent } from "./attribute/attribute.component";
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,8 @@ import { SignalComponent } from "./signal/signal.component";
     ReactiveFormComponent,
     PipeUsageComponent,
     ResponsiveItemComponent,
-    SignalComponent
+    SignalComponent,
+    AttributeComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
