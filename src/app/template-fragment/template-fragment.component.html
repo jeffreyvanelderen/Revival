@@ -1,0 +1,22 @@
+<p>template-fragment works!</p>
+
+<!--
+    Inspired by the native <template> element, the <ng-template> element lets you declare a template fragment 
+        – a section of content that you can dynamically or programmatically render.
+
+    The content of the <ng-template> element is NOT rendered on the page. 
+        Instead, you can get a reference to the template fragment and write code to dynamically render it.
+-->
+<ng-template #thisIsATemplateFragment let-pizzaTopping="Pineapple">
+    <p>This is a template fragment with variable: {{pizzaTopping}}</p>
+</ng-template>
+
+<!-- 
+// Render template fragment either via ViewContainerRef OR NgTemplateOutlet
+<ng-container
+  *ngTemplateOutlet="thisIsATemplateFragment"
+/> 
+
+-->
+
+<button (click)="onPressButton()"><p>Click to trigger render of template fragment</p></button>

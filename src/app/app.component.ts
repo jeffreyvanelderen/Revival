@@ -13,6 +13,7 @@ import { ResponsiveItemComponent } from './responsive-item/responsive-item.compo
 import { SignalComponent } from "./signal/signal.component";
 import { AttributeComponent } from "./attribute/attribute.component";
 import { UsingNgContentComponent } from "./using-ng-content/using-ng-content.component";
+import { TemplateFragmentComponent } from "./template-fragment/template-fragment.component";
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ import { UsingNgContentComponent } from "./using-ng-content/using-ng-content.com
     ResponsiveItemComponent,
     SignalComponent,
     AttributeComponent,
-    UsingNgContentComponent
+    UsingNgContentComponent,
+    TemplateFragmentComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
