@@ -12,6 +12,7 @@ import {Breakpoints} from '@angular/cdk/layout';
 import { ResponsiveItemComponent } from './responsive-item/responsive-item.component';
 import { SignalComponent } from "./signal/signal.component";
 import { AttributeComponent } from "./attribute/attribute.component";
+import { UsingNgContentComponent } from "./using-ng-content/using-ng-content.component";
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,8 @@ import { AttributeComponent } from "./attribute/attribute.component";
     PipeUsageComponent,
     ResponsiveItemComponent,
     SignalComponent,
-    AttributeComponent
+    AttributeComponent,
+    UsingNgContentComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
