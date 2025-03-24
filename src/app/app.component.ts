@@ -8,13 +8,13 @@ import { OptimizedImageComponent } from "./optimized-image/optimized-image.compo
 import { TemplateFormComponent } from "./template-form/template-form.component";
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { PipeUsageComponent } from "./pipe-usage/pipe-usage.component";
-import {Breakpoints} from '@angular/cdk/layout';
 import { ResponsiveItemComponent } from './responsive-item/responsive-item.component';
 import { SignalComponent } from "./signal/signal.component";
 import { AttributeComponent } from "./attribute/attribute.component";
 import { UsingNgContentComponent } from "./using-ng-content/using-ng-content.component";
 import { TemplateFragmentComponent } from "./template-fragment/template-fragment.component";
 import { UsingNgContainerComponent } from "./using-ng-container/using-ng-container.component";
+import { NgContainerDirectiveComponent, Theme } from "./ng-container-directive/ng-container-directive.component";
 
 @Component({
   selector: 'app-root',
@@ -33,10 +33,12 @@ import { UsingNgContainerComponent } from "./using-ng-container/using-ng-contain
     AttributeComponent,
     UsingNgContentComponent,
     TemplateFragmentComponent,
-    UsingNgContainerComponent
+    UsingNgContainerComponent,
+    NgContainerDirectiveComponent,
 ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  viewProviders: [Theme] // Nodig om de directive bloot te stellen aan zijn child items!
 })
 export class AppComponent {
   title = 'Revival';

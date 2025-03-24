@@ -41,6 +41,12 @@
     <app-using-ng-container />
     <app-divider />
 
+    <!-- De directive moet op een ECHT DOM ELEMENT staan, en niet op een ng-container! 
+      Anders kunnen de child componenten nooit aan de directive informatie (kunnen niet injecteren) -->
+    <div theme="dark">
+      <app-ng-container-directive />
+    </div>
+    <app-divider />
   </div>
 </main>
 
