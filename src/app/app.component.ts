@@ -16,6 +16,7 @@ import { TemplateFragmentComponent } from "./template-fragment/template-fragment
 import { UsingNgContainerComponent } from "./using-ng-container/using-ng-container.component";
 import { NgContainerDirectiveComponent, Theme } from "./ng-container-directive/ng-container-directive.component";
 import { VariablesInTemplatesComponent } from "./variables-in-templates/variables-in-templates.component";
+import { NgClassDirectiveComponent } from "./ng-class-directive/ng-class-directive.component";
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,8 @@ import { VariablesInTemplatesComponent } from "./variables-in-templates/variable
     TemplateFragmentComponent,
     UsingNgContainerComponent,
     NgContainerDirectiveComponent,
-    VariablesInTemplatesComponent
+    VariablesInTemplatesComponent,
+    NgClassDirectiveComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
