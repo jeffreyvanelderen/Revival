@@ -1,4 +1,30 @@
 
+<!--
+There are two types of triggers: on and when.
+
+The available triggers are as follows:
+
+ON:
+
+-> @defer (on viewport) {
+
+"idle"  ->	Triggers when the browser is idle. (default)
+"viewport"  ->	Triggers when specified content enters the viewport
+"interaction"   ->	Triggers when the user interacts with specified element
+"hover"     ->	Triggers when the mouse hovers over specified area
+"immediate"     ->	Triggers immediately after non-deferred content has finished rendering
+"timer"     ->	Triggers after a specific duration
+
+---
+
+WHEN:
+[accepts a custom conditional expressen and loads the deferred content when the condition becomes truthy]
+
+
+-> @defer (when someCondition) {
+
+-->
+
 @defer (on viewport) {
     <p>Expensive component loaded</p>
 } @placeholder (minimum 5s) {
@@ -9,4 +35,18 @@
 } @loading (minimum 5s) {
     <p>This loading content will show WHILE the deferred content is actively being fetched. - EAGERLY LOADED</p>
     <div class="loader"></div>
+} @error { 
+    <p>This is the error case! Failed to load component</p>
+}
+
+<!--
+    Prefetching data with prefetch
+
+    You can specify a prefetch trigger, this loads the JS associated with the @defer block before the content is shown!
+-->
+
+@defer (on interaction; prefetch on idle) {
+    <p>Some large component</p>
+} @placeholder {
+    <div>Some placeholder for the large component</div>
 }
