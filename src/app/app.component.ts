@@ -18,6 +18,7 @@ import { NgContainerDirectiveComponent, Theme } from "./ng-container-directive/n
 import { VariablesInTemplatesComponent } from "./variables-in-templates/variables-in-templates.component";
 import { NgClassDirectiveComponent } from "./ng-class-directive/ng-class-directive.component";
 import { NgStyleDirectiveComponent } from "./ng-style-directive/ng-style-directive.component";
+import { NgModelDirectiveComponent } from "./ng-model-directive/ng-model-directive.component";
 
 @Component({
   selector: 'app-root',
@@ -40,7 +41,8 @@ import { NgStyleDirectiveComponent } from "./ng-style-directive/ng-style-directi
     NgContainerDirectiveComponent,
     VariablesInTemplatesComponent,
     NgClassDirectiveComponent,
-    NgStyleDirectiveComponent
+    NgStyleDirectiveComponent,
+    NgModelDirectiveComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

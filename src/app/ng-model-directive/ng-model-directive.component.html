@@ -1,0 +1,7 @@
+<p>ng-model-directive works!</p>
+
+<p>Current item name: {{name}}</p>
+
+<p>[value] and (input)</p> <input #inputId [value]="name" (input)="name = inputId.value" />
+<p>[(ngModel)]</p> <input [(ngModel)]="name" />
+<p>[ngModel] and (ngModelChange)</p> <input [ngModel]="name" (ngModelChange)="name = $event" />
