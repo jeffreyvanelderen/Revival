@@ -19,6 +19,7 @@ import { VariablesInTemplatesComponent } from "./variables-in-templates/variable
 import { NgClassDirectiveComponent } from "./ng-class-directive/ng-class-directive.component";
 import { NgStyleDirectiveComponent } from "./ng-style-directive/ng-style-directive.component";
 import { NgModelDirectiveComponent } from "./ng-model-directive/ng-model-directive.component";
+import { HighlightDirectiveDirective } from '../directives/highlight-directive/highlight-directive.directive';
 
 @Component({
   selector: 'app-root',
@@ -42,7 +43,8 @@ import { NgModelDirectiveComponent } from "./ng-model-directive/ng-model-directi
     VariablesInTemplatesComponent,
     NgClassDirectiveComponent,
     NgStyleDirectiveComponent,
-    NgModelDirectiveComponent
+    NgModelDirectiveComponent,
+    HighlightDirectiveDirective,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
