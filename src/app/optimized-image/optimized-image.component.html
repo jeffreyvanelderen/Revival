@@ -1,3 +1,20 @@
 <p>optimized-image</p>
 
-<img [ngSrc]="imageUrl" width="160" height="120" />
+<img
+    [ngSrc]="imageUrl" 
+    width="160" 
+    height="120" 
+/>
+
+<!-- 
+    Placeholder config when using custom cdn/source:
+
+    <img
+    [ngSrc]="imageUrl" 
+    width="160" 
+    height="120" 
+    placeholder 
+    [placeholderConfig]="{blur: false}" 
+/>
+
+-->
