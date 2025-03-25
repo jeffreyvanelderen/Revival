@@ -21,6 +21,7 @@ import { NgStyleDirectiveComponent } from "./ng-style-directive/ng-style-directi
 import { NgModelDirectiveComponent } from "./ng-model-directive/ng-model-directive.component";
 import { HighlightDirectiveDirective } from '../directives/highlight-directive/highlight-directive.directive';
 import { MouseDetectorDirectiveDirective } from '../directives/mouse-detector-directive/mouse-detector-directive.directive';
+import { StorageService } from '../services/storage/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -57,6 +58,11 @@ export class AppComponent {
   
   someName = 'Jeffrey';  
   someLastName = 'Vanelderen';
+
+  constructor(private storageService: StorageService) {
+    this.storageService.set('test', 'val');
+    console.log(`test`, this.storageService.get('test'));
+  }
 
   onReceiveDidSubmitEvent(event: string) {
     alert("Parent received event from child: " + event);
