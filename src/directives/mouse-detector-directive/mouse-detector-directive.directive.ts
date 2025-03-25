@@ -15,7 +15,6 @@ export class MouseDetectorDirectiveDirective {
 
   @HostListener('mouseenter') onMouseEnter() {
     this.doHighlight(this.color);
-    console.log('mouseenter', this.color)
   }
 
   @HostListener('mouseleave') onMouseLeave() {
