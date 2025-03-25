@@ -20,6 +20,7 @@ import { NgClassDirectiveComponent } from "./ng-class-directive/ng-class-directi
 import { NgStyleDirectiveComponent } from "./ng-style-directive/ng-style-directive.component";
 import { NgModelDirectiveComponent } from "./ng-model-directive/ng-model-directive.component";
 import { HighlightDirectiveDirective } from '../directives/highlight-directive/highlight-directive.directive';
+import { MouseDetectorDirectiveDirective } from '../directives/mouse-detector-directive/mouse-detector-directive.directive';
 
 @Component({
   selector: 'app-root',
@@ -45,6 +46,7 @@ import { HighlightDirectiveDirective } from '../directives/highlight-directive/h
     NgStyleDirectiveComponent,
     NgModelDirectiveComponent,
     HighlightDirectiveDirective,
+    MouseDetectorDirectiveDirective,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
