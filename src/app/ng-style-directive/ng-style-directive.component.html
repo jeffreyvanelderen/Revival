@@ -1,0 +1,17 @@
+<p>ng-style-directive works! -> using signal and computed</p>
+
+<div>
+    <p [ngStyle]="currentStyles()">This text is initially italic, normal weight, and extra large (24px)</p>
+</div>
+
+<button (click)="canSave.set(!canSave())">
+    <p>Update canSave flag {{canSave()}}</p>
+</button>
+
+<button (click)="isSpecial.set(!isSpecial())">
+    <p>Update isSpecial flag {{isSpecial()}}</p>
+</button>
+
+<button (click)="unchanged.set(!unchanged())">
+    <p>Update unchanged flag {{unchanged()}}</p>
+</button>

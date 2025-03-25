@@ -17,6 +17,7 @@ import { UsingNgContainerComponent } from "./using-ng-container/using-ng-contain
 import { NgContainerDirectiveComponent, Theme } from "./ng-container-directive/ng-container-directive.component";
 import { VariablesInTemplatesComponent } from "./variables-in-templates/variables-in-templates.component";
 import { NgClassDirectiveComponent } from "./ng-class-directive/ng-class-directive.component";
+import { NgStyleDirectiveComponent } from "./ng-style-directive/ng-style-directive.component";
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,8 @@ import { NgClassDirectiveComponent } from "./ng-class-directive/ng-class-directi
     UsingNgContainerComponent,
     NgContainerDirectiveComponent,
     VariablesInTemplatesComponent,
-    NgClassDirectiveComponent
+    NgClassDirectiveComponent,
+    NgStyleDirectiveComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
