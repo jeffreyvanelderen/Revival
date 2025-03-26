@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SignalComponent } from './signal.component';
+import {SignalComponent} from './signal.component';
 
 describe('SignalComponent', () => {
   let component: SignalComponent;
@@ -8,9 +8,8 @@ describe('SignalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignalComponent]
-    })
-    .compileComponents();
+      imports: [SignalComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SignalComponent);
     component = fixture.componentInstance;

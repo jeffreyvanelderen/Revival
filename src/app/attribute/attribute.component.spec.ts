@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AttributeComponent } from './attribute.component';
+import {AttributeComponent} from './attribute.component';
 
 describe('AttributeComponent', () => {
   let component: AttributeComponent;
@@ -8,9 +8,8 @@ describe('AttributeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AttributeComponent]
-    })
-    .compileComponents();
+      imports: [AttributeComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AttributeComponent);
     component = fixture.componentInstance;

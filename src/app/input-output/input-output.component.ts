@@ -1,15 +1,14 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { HobbyService } from '../../services/hobby.service';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {HobbyService} from '../../services/hobby.service';
 
 @Component({
   selector: 'app-input-output',
   imports: [],
   templateUrl: './input-output.component.html',
-  styleUrl: './input-output.component.scss'
+  styleUrl: './input-output.component.scss',
 })
 export class InputOutputComponent {
-
-  // These @Input tags are like properties: They can be set via the parent component, using this component: 
+  // These @Input tags are like properties: They can be set via the parent component, using this component:
   // <app-input-output name="Jeffrey" lastName="Vanelderen" /> OR <app-input-output [name]="someName" [lastName]="someLastName" /> (when parent component need to interpret the values!)
   @Input() name?: string;
   @Input() lastName?: string;

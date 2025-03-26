@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-  name: 'spongebob'
+  name: 'spongebob',
 })
 export class SpongebobPipe implements PipeTransform {
-
   transform(value: string, ...args: unknown[]): string {
     let spongebobText = '';
 
@@ -12,8 +11,7 @@ export class SpongebobPipe implements PipeTransform {
       const isEven = i % 2 === 0;
       spongebobText += isEven ? value[i].toUpperCase() : value[i].toLowerCase();
     }
-    
+
     return spongebobText;
   }
-
 }

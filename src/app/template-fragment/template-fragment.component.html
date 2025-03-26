@@ -8,7 +8,7 @@
         Instead, you can get a reference to the template fragment and write code to dynamically render it.
 -->
 <ng-template #thisIsATemplateFragment let-pizzaTopping="Pineapple">
-    <p>This is a template fragment with variable: {{pizzaTopping}}</p>
+  <p>This is a template fragment with variable: {{ pizzaTopping }}</p>
 </ng-template>
 
 <!-- 
@@ -19,4 +19,6 @@
 
 -->
 
-<button (click)="onPressButton()"><p>Click to trigger render of template fragment</p></button>
+<button (click)="onPressButton()">
+  <p>Click to trigger render of template fragment</p>
+</button>

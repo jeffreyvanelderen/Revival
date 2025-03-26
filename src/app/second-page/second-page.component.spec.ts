@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SecondPageComponent } from './second-page.component';
+import {SecondPageComponent} from './second-page.component';
 
 describe('SecondPageComponent', () => {
   let component: SecondPageComponent;
@@ -8,9 +8,8 @@ describe('SecondPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SecondPageComponent]
-    })
-    .compileComponents();
+      imports: [SecondPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SecondPageComponent);
     component = fixture.componentInstance;

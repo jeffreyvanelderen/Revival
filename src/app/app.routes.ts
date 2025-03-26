@@ -1,8 +1,8 @@
-import { Routes } from '@angular/router';
-import { FirstPageComponent } from './first-page/first-page.component';
-import { SecondPageComponent } from './second-page/second-page.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-
+import {Routes} from '@angular/router';
+import {FirstPageComponent} from './first-page/first-page.component';
+import {SecondPageComponent} from './second-page/second-page.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {ErrorHandler, inject} from '@angular/core';
 
 /*
     The order of routes is important because the Router uses a first-match wins strategy when matching routes, so more specific routes should be placed above less specific routes. 
@@ -11,10 +11,32 @@ import { NotFoundComponent } from './not-found/not-found.component';
 */
 
 export const routes: Routes = [
-    { path: 'first-page/:id', component: FirstPageComponent },
-    { path: 'second-page', component: SecondPageComponent },
+  {path: 'first-page/:id', component: FirstPageComponent},
+  {path: 'second-page', component: SecondPageComponent},
 
-    /* Redirect */
-    { path: 'some-other-url', redirectTo: '/first-page/123?queryParam=via_redirect', pathMatch: 'full' },
+  /* Redirect */
+  {
+    path: 'some-other-url',
+    redirectTo: '/first-page/123?queryParam=via_redirect',
+    pathMatch: 'full',
+  },
 
-    { path: '**', component: NotFoundComponent },];
+  /* Redirect */
+  {
+    path: 'some-old-page',
+    redirectTo: ({queryParams}) => {
+      const errorHandler = inject(ErrorHandler);
+      const someValue = queryParams['someValue'];
+      if (someValue) {
+        return `/first-page/${someValue}`;
+      }
+
+      errorHandler.handleError(
+        new Error('Attempted navigation to user page without user ID.'),
+      );
+      return `**`;
+    },
+  },
+
+  {path: '**', component: NotFoundComponent},
+];

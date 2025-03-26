@@ -4,20 +4,23 @@
     Setting a class via ngClass using an expression - no dot here!
 -->
 <div [ngClass]="isSpecial() ? 'special' : 'non-special'">
-    <p>Set via [ngClass]="isSpecial() ? 'special' : 'non-special'"</p>
+  <p>Set via [ngClass]="isSpecial() ? 'special' : 'non-special'"</p>
 </div>
 
-<div style="height: 10px;"></div>
+<div style="height: 10px"></div>
 
 <!--
     Setting class(es) via ngClass using setter in component
 -->
 <div [ngClass]="classesSetViaMethod()">
-    <p>Set via [ngClass]="classesSetViaMethod()" using computed() which changes when signal isSpecial changes!</p>
+  <p>
+    Set via [ngClass]="classesSetViaMethod()" using computed() which changes
+    when signal isSpecial changes!
+  </p>
 </div>
 
-<div style="height: 10px;"></div>
+<div style="height: 10px"></div>
 
 <button (click)="this.isSpecial.set(!this.isSpecial())">
-    <p>Flip isSpecial</p>
+  <p>Flip isSpecial</p>
 </button>

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TemplateFragmentComponent } from './template-fragment.component';
+import {TemplateFragmentComponent} from './template-fragment.component';
 
 describe('TemplateFragmentComponent', () => {
   let component: TemplateFragmentComponent;
@@ -8,9 +8,8 @@ describe('TemplateFragmentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TemplateFragmentComponent]
-    })
-    .compileComponents();
+      imports: [TemplateFragmentComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TemplateFragmentComponent);
     component = fixture.componentInstance;

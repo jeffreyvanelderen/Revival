@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ResponsiveItemComponent } from './responsive-item.component';
+import {ResponsiveItemComponent} from './responsive-item.component';
 
 describe('ResponsiveItemComponent', () => {
   let component: ResponsiveItemComponent;
@@ -8,9 +8,8 @@ describe('ResponsiveItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ResponsiveItemComponent]
-    })
-    .compileComponents();
+      imports: [ResponsiveItemComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ResponsiveItemComponent);
     component = fixture.componentInstance;

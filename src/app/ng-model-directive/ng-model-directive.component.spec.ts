@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgModelDirectiveComponent } from './ng-model-directive.component';
+import {NgModelDirectiveComponent} from './ng-model-directive.component';
 
 describe('NgModelDirectiveComponent', () => {
   let component: NgModelDirectiveComponent;
@@ -8,9 +8,8 @@ describe('NgModelDirectiveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgModelDirectiveComponent]
-    })
-    .compileComponents();
+      imports: [NgModelDirectiveComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NgModelDirectiveComponent);
     component = fixture.componentInstance;

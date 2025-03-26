@@ -1,4 +1,4 @@
-import { SpongebobPipe } from './spongebob.pipe';
+import {SpongebobPipe} from './spongebob.pipe';
 
 describe('SpongebobPipe', () => {
   it('create an instance', () => {

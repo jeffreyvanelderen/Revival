@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { UsingNgContainerComponent } from './using-ng-container.component';
+import {UsingNgContainerComponent} from './using-ng-container.component';
 
 describe('UsingNgContainerComponent', () => {
   let component: UsingNgContainerComponent;
@@ -8,9 +8,8 @@ describe('UsingNgContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UsingNgContainerComponent]
-    })
-    .compileComponents();
+      imports: [UsingNgContainerComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(UsingNgContainerComponent);
     component = fixture.componentInstance;

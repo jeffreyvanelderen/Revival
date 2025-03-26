@@ -1,5 +1,5 @@
-import { Component, computed, OnInit, signal } from '@angular/core';
-import { SpongebobPipe } from '../../pipes/spongebob/spongebob.pipe';
+import {Component, computed, OnInit, signal} from '@angular/core';
+import {SpongebobPipe} from '../../pipes/spongebob/spongebob.pipe';
 
 const spongebobify = new SpongebobPipe().transform;
 
@@ -7,10 +7,9 @@ const spongebobify = new SpongebobPipe().transform;
   selector: 'app-signal',
   imports: [],
   templateUrl: './signal.component.html',
-  styleUrl: './signal.component.scss'
+  styleUrl: './signal.component.scss',
 })
 export class SignalComponent implements OnInit {
-  
   /*
   In Angular, you use signals to create and manage state. A signal is a lightweight wrapper around a value.
   */
@@ -29,8 +28,9 @@ export class SignalComponent implements OnInit {
   */
   isTrial = signal(false);
   isTrialExpired = signal(true);
-  showBuyLicence = computed<boolean>(() => this.isTrial() && this.isTrialExpired())
-
+  showBuyLicence = computed<boolean>(
+    () => this.isTrial() && this.isTrialExpired(),
+  );
 
   ngOnInit(): void {
     // Read value
@@ -38,15 +38,14 @@ export class SignalComponent implements OnInit {
 
     // Update value
     // either by update() callback
-    this.nameSignal.update(previousName => previousName.toUpperCase()); 
+    this.nameSignal.update(previousName => previousName.toUpperCase());
     console.log(`Name = ${this.nameSignal()}`); // UNKNOWN NAME
 
     // or by set()
-    this.nameSignal.set("Known name"); 
+    this.nameSignal.set('Known name');
     console.log(`Name = ${this.nameSignal()}`); // Known name
 
     // By setting nameSignal, nameComputed will always update as a side effect since it has nameSignal as a 'dependency'
     console.log(`nameComputed = ${this.nameComputed()}`); // KnOwN NaMe
   }
-
 }

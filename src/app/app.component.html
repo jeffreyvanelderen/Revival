@@ -3,30 +3,43 @@
     <nav>
       <ul>
         <li>
-          <a routerLink="/first-page" routerLinkActive="active" ariaCurrentWhenActive="page">First page</a>
+          <a
+            routerLink="/first-page"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >First page</a
+          >
         </li>
         <li>
-          <a routerLink="/second-page" routerLinkActive="active" ariaCurrentWhenActive="page">Second page</a>
+          <a
+            routerLink="/second-page"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Second page</a
+          >
         </li>
       </ul>
     </nav>
 
     <p>------ Router outlet ------</p>
-    
+
     <!-- The routed views render in the <router-outlet> ! -->
     <router-outlet />
 
     <p>------ End of router outlet ------</p>
 
-    <app-input-output [name]="someName" [lastName]="someLastName" (onSubmitEvent)="onReceiveDidSubmitEvent($event)" />
+    <app-input-output
+      [name]="someName"
+      [lastName]="someLastName"
+      (onSubmitEvent)="onReceiveDidSubmitEvent($event)" />
     <app-divider />
-    
+
     <app-control-flows />
     <app-divider />
-    
+
     <app-deferrable />
     <app-divider />
-    
+
     <app-optimized-image />
     <app-divider />
 
@@ -49,7 +62,10 @@
     <app-divider />
 
     <app-using-ng-content>
-      <p>This paragraph is passed via the parent to the component using ng-content! (Like children: React.ReactNode in React!)</p>
+      <p>
+        This paragraph is passed via the parent to the component using
+        ng-content! (Like children: React.ReactNode in React!)
+      </p>
     </app-using-ng-content>
     <app-divider />
 
@@ -78,10 +94,15 @@
     <app-ng-model-directive />
     <app-divider />
 
-    <p appHighlightDirective>This is a paragraph using a custom directive (highlight)</p>
+    <p appHighlightDirective>
+      This is a paragraph using a custom directive (highlight)
+    </p>
     <app-divider />
 
-    <p appMouseDetectorDirective color="red" defaultColor="orange">p containing Mouse detector directive using &#64;HostListener('event') function() {{'{ }'}}</p>
+    <p appMouseDetectorDirective color="red" defaultColor="orange">
+      p containing Mouse detector directive using &#64;HostListener('event')
+      function() {{ '{ }' }}
+    </p>
     <app-divider />
 
     <p>Use ngNonBindable to stop evaluation.</p>

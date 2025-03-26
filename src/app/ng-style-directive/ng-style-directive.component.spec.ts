@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgStyleDirectiveComponent } from './ng-style-directive.component';
+import {NgStyleDirectiveComponent} from './ng-style-directive.component';
 
 describe('NgStyleDirectiveComponent', () => {
   let component: NgStyleDirectiveComponent;
@@ -8,9 +8,8 @@ describe('NgStyleDirectiveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgStyleDirectiveComponent]
-    })
-    .compileComponents();
+      imports: [NgStyleDirectiveComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NgStyleDirectiveComponent);
     component = fixture.componentInstance;

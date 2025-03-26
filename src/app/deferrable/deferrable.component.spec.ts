@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DeferrableComponent } from './deferrable.component';
+import {DeferrableComponent} from './deferrable.component';
 
 describe('DeferrableComponent', () => {
   let component: DeferrableComponent;
@@ -8,9 +8,8 @@ describe('DeferrableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DeferrableComponent]
-    })
-    .compileComponents();
+      imports: [DeferrableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DeferrableComponent);
     component = fixture.componentInstance;

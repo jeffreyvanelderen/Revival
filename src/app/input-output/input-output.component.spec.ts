@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InputOutputComponent } from './input-output.component';
+import {InputOutputComponent} from './input-output.component';
 
 describe('InputOutputComponent', () => {
   let component: InputOutputComponent;
@@ -8,9 +8,8 @@ describe('InputOutputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputOutputComponent]
-    })
-    .compileComponents();
+      imports: [InputOutputComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InputOutputComponent);
     component = fixture.componentInstance;

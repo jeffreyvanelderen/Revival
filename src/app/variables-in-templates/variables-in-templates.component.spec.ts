@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { VariablesInTemplatesComponent } from './variables-in-templates.component';
+import {VariablesInTemplatesComponent} from './variables-in-templates.component';
 
 describe('VariablesInTemplatesComponent', () => {
   let component: VariablesInTemplatesComponent;
@@ -8,9 +8,8 @@ describe('VariablesInTemplatesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VariablesInTemplatesComponent]
-    })
-    .compileComponents();
+      imports: [VariablesInTemplatesComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(VariablesInTemplatesComponent);
     component = fixture.componentInstance;

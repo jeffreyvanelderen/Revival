@@ -9,25 +9,23 @@
 
     You can use Angular's built-in NgComponentOutlet directive to dynamically render a component to the location of the <ng-container>. (import CommonModule)
 -->
-<ng-container [ngComponentOutlet]="someOtherComponent()">
-
-</ng-container>
-
-
+<ng-container [ngComponentOutlet]="someOtherComponent()"> </ng-container>
 
 <!--
     You can also apply structural directives to <ng-container> elements. Common examples of this include ngIf and ngFor.
 -->
-<p>Applying structural directives to ng container elements (like ngIf and ngFor)</p>
-<ng-container *ngFor="let item of items; index as i;">
-    <h2>{{ item.title }}</h2>
-    <p>{{ item.description }}</p>
+<p>
+  Applying structural directives to ng container elements (like ngIf and ngFor)
+</p>
+<ng-container *ngFor="let item of items; index as i">
+  <h2>{{ item.title }}</h2>
+  <p>{{ item.description }}</p>
 </ng-container>
 
 <ng-container *ngIf="isAdmin()">
-    <p>Structural directive on ng-container using *ngIf -> you're admin</p>
+  <p>Structural directive on ng-container using *ngIf -> you're admin</p>
 </ng-container>
 
 <ng-container *ngIf="!isAdmin()">
-    <p>Structural directive on ng-container using *ngIf -> you're a basic user</p>
+  <p>Structural directive on ng-container using *ngIf -> you're a basic user</p>
 </ng-container>

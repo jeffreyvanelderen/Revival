@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ControlFlowsComponent } from './control-flows.component';
+import {ControlFlowsComponent} from './control-flows.component';
 
 describe('ControlFlowsComponent', () => {
   let component: ControlFlowsComponent;
@@ -8,9 +8,8 @@ describe('ControlFlowsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ControlFlowsComponent]
-    })
-    .compileComponents();
+      imports: [ControlFlowsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ControlFlowsComponent);
     component = fixture.componentInstance;

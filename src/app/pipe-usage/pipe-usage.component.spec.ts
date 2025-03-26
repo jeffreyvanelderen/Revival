@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PipeUsageComponent } from './pipe-usage.component';
+import {PipeUsageComponent} from './pipe-usage.component';
 
 describe('PipeUsageComponent', () => {
   let component: PipeUsageComponent;
@@ -8,9 +8,8 @@ describe('PipeUsageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PipeUsageComponent]
-    })
-    .compileComponents();
+      imports: [PipeUsageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PipeUsageComponent);
     component = fixture.componentInstance;

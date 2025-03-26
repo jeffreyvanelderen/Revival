@@ -1,4 +1,3 @@
-
 <!--
 There are two types of triggers: on and when.
 
@@ -26,17 +25,23 @@ WHEN:
 -->
 
 @defer (on viewport) {
-    <p>Expensive component loaded</p>
+  <p>Expensive component loaded</p>
 } @placeholder (minimum 5s) {
-    <div>
-        <p>This is the placeholder that will show <i>before the deferred loading starts</i> - EAGERLY LOADED</p>
-        <div class="loader"></div>
-    </div>
-} @loading (minimum 5s) {
-    <p>This loading content will show WHILE the deferred content is actively being fetched. - EAGERLY LOADED</p>
+  <div>
+    <p>
+      This is the placeholder that will show
+      <i>before the deferred loading starts</i> - EAGERLY LOADED
+    </p>
     <div class="loader"></div>
-} @error { 
-    <p>This is the error case! Failed to load component</p>
+  </div>
+} @loading (minimum 5s) {
+  <p>
+    This loading content will show WHILE the deferred content is actively being
+    fetched. - EAGERLY LOADED
+  </p>
+  <div class="loader"></div>
+} @error {
+  <p>This is the error case! Failed to load component</p>
 }
 
 <!--
@@ -46,7 +51,7 @@ WHEN:
 -->
 
 @defer (on interaction; prefetch on idle) {
-    <p>Some large component</p>
+  <p>Some large component</p>
 } @placeholder {
-    <div>Some placeholder for the large component</div>
+  <div>Some placeholder for the large component</div>
 }
