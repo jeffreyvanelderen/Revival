@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { InputOutputComponent } from "./input-output/input-output.component";
 import { ControlFlowsComponent } from "./control-flows/control-flows.component";
 import { DividerComponent } from "./divider/divider.component";
@@ -26,7 +26,16 @@ import { StorageService } from '../services/storage/storage.service';
 @Component({
   selector: 'app-root',
   imports: [
+    /* These 3 imports are needed for routing! */
     RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+
+    /* Directives */
+    HighlightDirectiveDirective,
+    MouseDetectorDirectiveDirective,
+
+    /* Component */
     InputOutputComponent,
     ControlFlowsComponent,
     DividerComponent,
@@ -46,8 +55,6 @@ import { StorageService } from '../services/storage/storage.service';
     NgClassDirectiveComponent,
     NgStyleDirectiveComponent,
     NgModelDirectiveComponent,
-    HighlightDirectiveDirective,
-    MouseDetectorDirectiveDirective,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

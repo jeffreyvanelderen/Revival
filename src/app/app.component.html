@@ -1,5 +1,23 @@
 <main class="main">
   <div class="content">
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/first-page" routerLinkActive="active" ariaCurrentWhenActive="page">First page</a>
+        </li>
+        <li>
+          <a routerLink="/second-page" routerLinkActive="active" ariaCurrentWhenActive="page">Second page</a>
+        </li>
+      </ul>
+    </nav>
+
+    <p>------ Router outlet ------</p>
+    
+    <!-- The routed views render in the <router-outlet> ! -->
+    <router-outlet />
+
+    <p>------ End of router outlet ------</p>
+
     <app-input-output [name]="someName" [lastName]="someLastName" (onSubmitEvent)="onReceiveDidSubmitEvent($event)" />
     <app-divider />
     
@@ -72,5 +90,3 @@
 
   </div>
 </main>
-
-<router-outlet />
