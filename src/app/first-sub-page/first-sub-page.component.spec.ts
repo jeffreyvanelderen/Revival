@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FirstSubPageComponent } from './first-sub-page.component';
+import {FirstSubPageComponent} from './first-sub-page.component';
 
 describe('FirstSubPageComponent', () => {
   let component: FirstSubPageComponent;
@@ -8,9 +8,8 @@ describe('FirstSubPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FirstSubPageComponent]
-    })
-    .compileComponents();
+      imports: [FirstSubPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FirstSubPageComponent);
     component = fixture.componentInstance;

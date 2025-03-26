@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PageWithNestedRoutesComponent } from './page-with-nested-routes.component';
+import {PageWithNestedRoutesComponent} from './page-with-nested-routes.component';
 
 describe('PageWithNestedRoutesComponent', () => {
   let component: PageWithNestedRoutesComponent;
@@ -8,9 +8,8 @@ describe('PageWithNestedRoutesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageWithNestedRoutesComponent]
-    })
-    .compileComponents();
+      imports: [PageWithNestedRoutesComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PageWithNestedRoutesComponent);
     component = fixture.componentInstance;

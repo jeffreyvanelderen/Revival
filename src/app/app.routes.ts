@@ -3,12 +3,12 @@ import {FirstPageComponent} from './first-page/first-page.component';
 import {SecondPageComponent} from './second-page/second-page.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {ErrorHandler, inject} from '@angular/core';
-import { PageWithNestedRoutesComponent } from './page-with-nested-routes/page-with-nested-routes.component';
-import { FirstSubPageComponent } from './first-sub-page/first-sub-page.component';
-import { SecondSubPageComponent } from './second-sub-page/second-sub-page.component';
-import { GeneralComponent } from './general/general.component';
-import { isAuthenticatedGuard } from '../guards/is-authenticated/is-authenticated.guard';
-import { ProfileComponent } from './profile/profile.component';
+import {PageWithNestedRoutesComponent} from './page-with-nested-routes/page-with-nested-routes.component';
+import {FirstSubPageComponent} from './first-sub-page/first-sub-page.component';
+import {SecondSubPageComponent} from './second-sub-page/second-sub-page.component';
+import {GeneralComponent} from './general/general.component';
+import {isAuthenticatedGuard} from '../guards/is-authenticated/is-authenticated.guard';
+import {ProfileComponent} from './profile/profile.component';
 
 /*
     The order of routes is important because the Router uses a first-match wins strategy when matching routes, so more specific routes should be placed above less specific routes. 
@@ -23,17 +23,20 @@ export const routes: Routes = [
   {path: 'second-page', component: SecondPageComponent},
 
   /* Nested routes */
-  {path: 'page-with-nested-routes', component: PageWithNestedRoutesComponent, children: [
-    {
-      path: 'sub-first-page',
-      component: FirstSubPageComponent,
-    },
-    {
-      path: 'sub-second-page',
-      component: SecondSubPageComponent,
-    }
-  ]
-},
+  {
+    path: 'page-with-nested-routes',
+    component: PageWithNestedRoutesComponent,
+    children: [
+      {
+        path: 'sub-first-page',
+        component: FirstSubPageComponent,
+      },
+      {
+        path: 'sub-second-page',
+        component: SecondSubPageComponent,
+      },
+    ],
+  },
 
   /* Redirect */
   {
@@ -60,10 +63,20 @@ export const routes: Routes = [
   },
 
   /* Lazy loaded components/routes */
-  {path: 'lazy-loaded', loadComponent: () => import('./first-page/first-page.component').then(component => component.FirstPageComponent)},
+  {
+    path: 'lazy-loaded',
+    loadComponent: () =>
+      import('./first-page/first-page.component').then(
+        component => component.FirstPageComponent,
+      ),
+  },
 
   /* Guarded route(s) */
-  {path: 'authenticated', component: ProfileComponent, canActivate: [isAuthenticatedGuard]},
+  {
+    path: 'authenticated',
+    component: ProfileComponent,
+    canActivate: [isAuthenticatedGuard],
+  },
 
   {path: '**', component: NotFoundComponent},
 ];

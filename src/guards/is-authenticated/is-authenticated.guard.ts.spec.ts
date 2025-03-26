@@ -1,11 +1,13 @@
-import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import {TestBed} from '@angular/core/testing';
+import {CanActivateFn} from '@angular/router';
 
-import { isAuthenticatedGuard } from './is-authenticated.guard';
+import {isAuthenticatedGuard} from './is-authenticated.guard';
 
 describe('secondPageGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => isAuthenticatedGuard(...guardParameters));
+  const executeGuard: CanActivateFn = (...guardParameters) =>
+    TestBed.runInInjectionContext(() =>
+      isAuthenticatedGuard(...guardParameters),
+    );
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
