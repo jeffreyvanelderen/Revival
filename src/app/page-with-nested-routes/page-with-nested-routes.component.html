@@ -1,0 +1,23 @@
+<h3>Page with nested routes [PageWithNestedRoutes.component.html]</h3>
+<nav>
+    <ul>
+    <li>
+        <a
+            [routerLink]="['sub-first-page']"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Sub first page</a
+        >
+    </li>
+    <li>
+        <a
+            routerLink="sub-second-page"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Sub second page</a
+        >
+    </li>
+    </ul>
+</nav>
+
+<router-outlet />

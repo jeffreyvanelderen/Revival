@@ -3,6 +3,9 @@ import {FirstPageComponent} from './first-page/first-page.component';
 import {SecondPageComponent} from './second-page/second-page.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {ErrorHandler, inject} from '@angular/core';
+import { PageWithNestedRoutesComponent } from './page-with-nested-routes/page-with-nested-routes.component';
+import { FirstSubPageComponent } from './first-sub-page/first-sub-page.component';
+import { SecondSubPageComponent } from './second-sub-page/second-sub-page.component';
 
 /*
     The order of routes is important because the Router uses a first-match wins strategy when matching routes, so more specific routes should be placed above less specific routes. 
@@ -13,6 +16,19 @@ import {ErrorHandler, inject} from '@angular/core';
 export const routes: Routes = [
   {path: 'first-page/:id', component: FirstPageComponent},
   {path: 'second-page', component: SecondPageComponent},
+
+  /* Nested routes */
+  {path: 'page-with-nested-routes', component: PageWithNestedRoutesComponent, children: [
+    {
+      path: 'sub-first-page',
+      component: FirstSubPageComponent,
+    },
+    {
+      path: 'sub-second-page',
+      component: SecondSubPageComponent,
+    }
+  ]
+},
 
   /* Redirect */
   {
@@ -32,7 +48,7 @@ export const routes: Routes = [
       }
 
       errorHandler.handleError(
-        new Error('Attempted navigation to user page without user ID.'),
+        new Error("Attempted navigation to user page without 'someValue'."),
       );
       return `**`;
     },
