@@ -23,6 +23,7 @@ import {VariablesInTemplatesComponent} from '../variables-in-templates/variables
 import {StorageService} from '../../services/storage/storage.service';
 import {RouterLink} from '@angular/router';
 import {StorageKey} from '../../models/enums/internal/StorageKey';
+import { ReactiveFormValidationComponent } from "../reactive-form-validation/reactive-form-validation.component";
 
 @Component({
   selector: 'app-general',
@@ -52,7 +53,8 @@ import {StorageKey} from '../../models/enums/internal/StorageKey';
     NgClassDirectiveComponent,
     NgStyleDirectiveComponent,
     NgModelDirectiveComponent,
-  ],
+    ReactiveFormValidationComponent
+],
   templateUrl: './general.component.html',
   styleUrl: './general.component.scss',
 })
