@@ -58,7 +58,7 @@ export const routes: Routes = [
       errorHandler.handleError(
         new Error("Attempted navigation to user page without 'someValue'."),
       );
-      return `**`;
+      return ``;
     },
   },
 
