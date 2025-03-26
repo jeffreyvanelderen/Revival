@@ -20,10 +20,15 @@ import { TemplateFragmentComponent } from '../template-fragment/template-fragmen
 import { UsingNgContainerComponent } from '../using-ng-container/using-ng-container.component';
 import { UsingNgContentComponent } from '../using-ng-content/using-ng-content.component';
 import { VariablesInTemplatesComponent } from '../variables-in-templates/variables-in-templates.component';
+import { StorageService } from '../../services/storage/storage.service';
+import { RouterLink } from '@angular/router';
+import { StorageKey } from '../../models/enums/internal/StorageKey';
 
 @Component({
   selector: 'app-general',
   imports: [
+        /* Needed for routing */
+        RouterLink,
         /* Directives */
         HighlightDirectiveDirective,
         MouseDetectorDirectiveDirective,
@@ -58,7 +63,17 @@ export class GeneralComponent {
   someName = 'Jeffrey';
   someLastName = 'Vanelderen';
 
+  constructor(private storageService: StorageService) { }
+
   onReceiveDidSubmitEvent(event: string) {
     alert('Parent received event from child: ' + event);
+  }
+
+  doMockLogin() {
+    this.storageService.set(StorageKey.TOKEN, 'mocked-token');
+  }
+
+  doMockLogout() {
+    this.storageService.storage.removeItem(StorageKey.TOKEN);
   }
 }

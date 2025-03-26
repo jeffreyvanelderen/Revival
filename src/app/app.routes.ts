@@ -7,6 +7,8 @@ import { PageWithNestedRoutesComponent } from './page-with-nested-routes/page-wi
 import { FirstSubPageComponent } from './first-sub-page/first-sub-page.component';
 import { SecondSubPageComponent } from './second-sub-page/second-sub-page.component';
 import { GeneralComponent } from './general/general.component';
+import { isAuthenticatedGuard } from '../guards/is-authenticated/is-authenticated.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 /*
     The order of routes is important because the Router uses a first-match wins strategy when matching routes, so more specific routes should be placed above less specific routes. 
@@ -59,6 +61,9 @@ export const routes: Routes = [
 
   /* Lazy loaded components/routes */
   {path: 'lazy-loaded', loadComponent: () => import('./first-page/first-page.component').then(component => component.FirstPageComponent)},
+
+  /* Guarded route(s) */
+  {path: 'authenticated', component: ProfileComponent, canActivate: [isAuthenticatedGuard]},
 
   {path: '**', component: NotFoundComponent},
 ];
