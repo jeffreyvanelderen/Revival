@@ -18,7 +18,7 @@ export class ReactiveFormComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
-  standaloneFormControl = new FormControl('')
+  standaloneFormControl = new FormControl('');
 
   onPressSubmit() {
     alert(`Submitted form: ${JSON.stringify(this.form.value)}`);

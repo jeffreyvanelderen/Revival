@@ -1,17 +1,24 @@
 <p>Reactive form with validations (either via HTML or via formgroup itself)</p>
 
-<input type="text" id="name" name="name" class="form-control" [formControl]="nameFormControl" />
-@if(nameFormControl.invalid && (nameFormControl.dirty || nameFormControl.touched)) {
-    <div style="height: 12px" ></div>
-    <div class="alert">
-        <p class="alertText">
-            @if(nameFormControl.hasError('required')) {
-                Name is required
-            } @else if (nameFormControl.hasError('minlength')) {
-                Name should be at least 4 characters
-            } @else if (nameFormControl.hasError('pattern')) {
-                Name contains invalid characters. Use only letters and spaces.
-            }
-        </p>
-    </div>
+<input
+  type="text"
+  id="name"
+  name="name"
+  class="form-control"
+  [formControl]="nameFormControl" />
+@if (
+  nameFormControl.invalid && (nameFormControl.dirty || nameFormControl.touched)
+) {
+  <div style="height: 12px"></div>
+  <div class="alert">
+    <p class="alertText">
+      @if (nameFormControl.hasError('required')) {
+        Name is required
+      } @else if (nameFormControl.hasError('minlength')) {
+        Name should be at least 4 characters
+      } @else if (nameFormControl.hasError('pattern') || nameFormControl.hasError(ONLY_LETTERS_ERROR)) {
+        Name contains invalid characters. Use only letters and spaces.
+      }
+    </p>
+  </div>
 }

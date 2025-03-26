@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ReactiveFormValidationComponent } from './reactive-form-validation.component';
+import {ReactiveFormValidationComponent} from './reactive-form-validation.component';
 
 describe('ReactiveFormValidationComponent', () => {
   let component: ReactiveFormValidationComponent;
@@ -8,9 +8,8 @@ describe('ReactiveFormValidationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormValidationComponent]
-    })
-    .compileComponents();
+      imports: [ReactiveFormValidationComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ReactiveFormValidationComponent);
     component = fixture.componentInstance;
