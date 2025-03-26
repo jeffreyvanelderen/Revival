@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { OnlyLettersValidatorDirective } from './validator/only-letters-validator.directive';
 
 @Component({
   selector: 'app-template-form',
-  imports: [FormsModule],
+  imports: [FormsModule, OnlyLettersValidatorDirective],
   templateUrl: './template-form.component.html',
   styleUrl: './template-form.component.scss',
 })
@@ -12,6 +13,7 @@ export class TemplateFormComponent {
   firstname: string = '';
   // Set via input in HTML
   email: string = '';
+
 
   onPressSubmit() {
     alert(`values: firstName=${this.firstname} and email=${this.email}`);

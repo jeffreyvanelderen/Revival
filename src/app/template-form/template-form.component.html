@@ -1,13 +1,13 @@
 <p>template-form</p>
 
 <label for="firstnameInput">
-  <input id="firstnameInput" type="text" [(ngModel)]="firstname" />
+  <input id="firstnameInput" type="text" [(ngModel)]="firstname" appOnlyLettersValidator [appOnlyLetters]="firstname" />
 </label>
 
 <label for="emailInput">
   <input id="emailInput" type="email" [(ngModel)]="email" />
 </label>
 
-<button (click)="onPressSubmit()">
+<button (click)="onPressSubmit()" [disabled]="!firstname || !email">
   <p>Submit</p>
 </button>
