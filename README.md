@@ -4,6 +4,18 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
+First, set the correct node version using NVM:
+
+```bash
+nvm use
+```
+
+Download node_modules
+
+```bash
+npm install
+```
+
 To start a local development server, run:
 
 ```bash
@@ -18,6 +30,22 @@ Angular CLI includes powerful code scaffolding tools. To generate a new componen
 
 ```bash
 ng generate component component-name
+```
+
+```bash
+ng generate service service-name
+```
+
+```bash
+ng generate guard guard-name
+```
+
+```bash
+ng generate directive directive-name
+```
+
+```bash
+ng generate pipe pipe-name
 ```
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
