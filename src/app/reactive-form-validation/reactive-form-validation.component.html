@@ -2,15 +2,16 @@
 
 <input type="text" id="name" name="name" class="form-control" [formControl]="nameFormControl" />
 @if(nameFormControl.invalid && (nameFormControl.dirty || nameFormControl.touched)) {
+    <div style="height: 12px" ></div>
     <div class="alert">
-        <div *ngIf="nameFormControl.hasError('required')">
-            Name is required.
-        </div>
-        <div *ngIf="nameFormControl.hasError('minlength')">
-            Name must be at least 4 characters long.
-        </div>
-        <div *ngIf="nameFormControl.hasError('pattern')">
-            Name does not match pattern.
-        </div>
+        <p class="alertText">
+            @if(nameFormControl.hasError('required')) {
+                Name is required
+            } @else if (nameFormControl.hasError('minlength')) {
+                Name should be at least 4 characters
+            } @else if (nameFormControl.hasError('pattern')) {
+                Name contains invalid characters. Use only letters and spaces.
+            }
+        </p>
     </div>
 }

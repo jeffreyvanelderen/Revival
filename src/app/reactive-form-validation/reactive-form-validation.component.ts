@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ONLY_LETTERS_AND_SPACES } from '../../utils/regex.util';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ONLY_LETTERS } from '../../utils/regex.util';
 
 @Component({
   selector: 'app-reactive-form-validation',
@@ -14,7 +14,7 @@ export class ReactiveFormValidationComponent {
     nameFormControl = new FormControl('', [
       Validators.minLength(4), 
       Validators.required, 
-      Validators.pattern(ONLY_LETTERS_AND_SPACES)
+      Validators.pattern(ONLY_LETTERS)
     ]);
 
 }

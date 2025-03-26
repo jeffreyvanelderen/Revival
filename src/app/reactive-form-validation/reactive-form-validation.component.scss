@@ -1,0 +1,15 @@
+.alert {
+    display: flex;
+
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid orange;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.alertText {
+    font-weight: bold;
+    color: orangered;
+}
