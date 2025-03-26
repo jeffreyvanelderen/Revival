@@ -30,11 +30,9 @@ import { StorageService } from '../services/storage/storage.service';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-
     /* Directives */
     HighlightDirectiveDirective,
     MouseDetectorDirectiveDirective,
-
     /* Component */
     InputOutputComponent,
     ControlFlowsComponent,

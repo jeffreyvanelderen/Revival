@@ -11,7 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 */
 
 export const routes: Routes = [
-    { path: 'first-page', component: FirstPageComponent },
+    { path: 'first-page/:id', component: FirstPageComponent },
     { path: 'second-page', component: SecondPageComponent },
 
-    { path: '*', component: NotFoundComponent },];
+    { path: '**', component: NotFoundComponent },];
