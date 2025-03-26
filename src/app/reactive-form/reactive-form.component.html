@@ -20,5 +20,11 @@
   </button>
 </form>
 
+  <label
+    >Standalone:
+    <input type="text" [formControl]="standaloneFormControl" />
+  </label>
+
 <p>Name: {{ form.value.name }}</p>
 <p>Email: {{ form.value.email }}</p>
+<p>Standalone: {{ standaloneFormControl.value }}</p>
