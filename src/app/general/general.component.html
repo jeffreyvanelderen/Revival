@@ -1,0 +1,81 @@
+
+    <app-input-output
+      [name]="someName"
+      [lastName]="someLastName"
+      (onSubmitEvent)="onReceiveDidSubmitEvent($event)" />
+    <app-divider />
+
+    <app-control-flows />
+    <app-divider />
+
+    <app-deferrable />
+    <app-divider />
+
+    <app-optimized-image />
+    <app-divider />
+
+    <app-template-form />
+    <app-divider />
+
+    <app-reactive-form />
+    <app-divider />
+
+    <app-pipe-usage />
+    <app-divider />
+
+    <app-responsive-item />
+    <app-divider />
+
+    <app-signal />
+    <app-divider />
+
+    <app-attribute />
+    <app-divider />
+
+    <app-using-ng-content>
+      <p>
+        This paragraph is passed via the parent to the component using
+        ng-content! (Like children: React.ReactNode in React!)
+      </p>
+    </app-using-ng-content>
+    <app-divider />
+
+    <app-template-fragment />
+    <app-divider />
+
+    <app-using-ng-container />
+    <app-divider />
+
+    <!-- De directive moet op een ECHT DOM ELEMENT staan, en niet op een ng-container! 
+      Anders kunnen de child componenten nooit aan de directive informatie (kunnen niet injecteren) -->
+    <div theme="dark">
+      <app-ng-container-directive />
+    </div>
+    <app-divider />
+
+    <app-variables-in-templates />
+    <app-divider />
+
+    <app-ng-class-directive />
+    <app-divider />
+
+    <app-ng-style-directive />
+    <app-divider />
+
+    <app-ng-model-directive />
+    <app-divider />
+
+    <p appHighlightDirective>
+      This is a paragraph using a custom directive (highlight)
+    </p>
+    <app-divider />
+
+    <p appMouseDetectorDirective color="red" defaultColor="orange">
+      p containing Mouse detector directive using &#64;HostListener('event')
+      function() {{ '{ }' }}
+    </p>
+    <app-divider />
+
+    <p>Use ngNonBindable to stop evaluation.</p>
+    <p ngNonBindable>This should not evaluate: {{ 1 + 1 }}</p>
+    <app-divider />

@@ -6,6 +6,7 @@ import {ErrorHandler, inject} from '@angular/core';
 import { PageWithNestedRoutesComponent } from './page-with-nested-routes/page-with-nested-routes.component';
 import { FirstSubPageComponent } from './first-sub-page/first-sub-page.component';
 import { SecondSubPageComponent } from './second-sub-page/second-sub-page.component';
+import { GeneralComponent } from './general/general.component';
 
 /*
     The order of routes is important because the Router uses a first-match wins strategy when matching routes, so more specific routes should be placed above less specific routes. 
@@ -14,6 +15,8 @@ import { SecondSubPageComponent } from './second-sub-page/second-sub-page.compon
 */
 
 export const routes: Routes = [
+  {path: '', component: GeneralComponent},
+
   {path: 'first-page/:id', component: FirstPageComponent},
   {path: 'second-page', component: SecondPageComponent},
 
@@ -53,6 +56,9 @@ export const routes: Routes = [
       return `**`;
     },
   },
+
+  /* Lazy loaded components/routes */
+  {path: 'lazy-loaded', loadComponent: () => import('./first-page/first-page.component').then(component => component.FirstPageComponent)},
 
   {path: '**', component: NotFoundComponent},
 ];
