@@ -14,4 +14,7 @@ export const routes: Routes = [
     { path: 'first-page/:id', component: FirstPageComponent },
     { path: 'second-page', component: SecondPageComponent },
 
+    /* Redirect */
+    { path: 'some-other-url', redirectTo: '/first-page/123?queryParam=via_redirect', pathMatch: 'full' },
+
     { path: '**', component: NotFoundComponent },];
