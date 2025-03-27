@@ -1,14 +1,20 @@
 <p>template-form</p>
 
-  <mat-form-field>
-    <mat-label>First name</mat-label>
-    <input matInput id="firstnameInput" type="text" [(ngModel)]="firstname" appOnlyLettersValidator [appOnlyLetters]="firstname" />
-  </mat-form-field>
+<mat-form-field>
+  <mat-label>First name</mat-label>
+  <input
+    matInput
+    id="firstnameInput"
+    type="text"
+    [(ngModel)]="firstname"
+    appOnlyLettersValidator
+    [appOnlyLetters]="firstname" />
+</mat-form-field>
 
-  <mat-form-field title="E-mail">
-    <mat-label>E-mail</mat-label>
-    <input matInput id="emailInput" type="email" [(ngModel)]="email" />
-  </mat-form-field>
+<mat-form-field title="E-mail">
+  <mat-label>E-mail</mat-label>
+  <input matInput id="emailInput" type="email" [(ngModel)]="email" />
+</mat-form-field>
 
 <button (click)="onPressSubmit()" [disabled]="!firstname || !email">
   <p>Submit</p>

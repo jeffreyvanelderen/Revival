@@ -7,7 +7,12 @@ import {
 
 import {routes} from './app.routes';
 import {HobbyService} from '../services/hobby.service';
-import { provideHttpClient, withFetch, withInterceptors, withJsonpSupport } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+  withJsonpSupport,
+} from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -33,6 +38,6 @@ export const appConfig: ApplicationConfig = {
       withFetch(),
       // withInterceptors(),
       // withJsonpSupport(),
-    )
+    ),
   ],
 };

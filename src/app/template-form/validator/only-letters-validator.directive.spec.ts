@@ -1,4 +1,4 @@
-import { OnlyLettersValidatorDirective } from './only-letters-validator.directive';
+import {OnlyLettersValidatorDirective} from './only-letters-validator.directive';
 
 describe('OnlyLettersValidatorDirective', () => {
   it('should create an instance', () => {

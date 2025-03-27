@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DogBreedsApiComponent } from './dog-breeds-api.component';
+import {DogBreedsApiComponent} from './dog-breeds-api.component';
 
 describe('DogBreedsApiComponent', () => {
   let component: DogBreedsApiComponent;
@@ -8,9 +8,8 @@ describe('DogBreedsApiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DogBreedsApiComponent]
-    })
-    .compileComponents();
+      imports: [DogBreedsApiComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DogBreedsApiComponent);
     component = fixture.componentInstance;

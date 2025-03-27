@@ -22,7 +22,6 @@ Create `.env` with the needed properties, see `.env-example`. [You might need to
 NG_APP_DOG_API_KEY=123
 ```
 
-
 To start a local development server, run:
 
 ```bash

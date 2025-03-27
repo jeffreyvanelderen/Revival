@@ -1,18 +1,21 @@
-import { Component, Input } from '@angular/core';
-import { ExternalBreed } from '../../models/external/dog-api/external-breed.model';
-import { DogService } from '../../services/dog/dog.service';
-import { MeasuringType, MeasuringTypeLengthUnit, MeasuringTypeWeightUnit } from '../../models/enums/internal/MeasuringType';
-import { NgOptimizedImage } from '@angular/common';
-import { Router } from '@angular/router';
+import {Component, Input} from '@angular/core';
+import {ExternalBreed} from '../../models/external/dog-api/external-breed.model';
+import {DogService} from '../../services/dog/dog.service';
+import {
+  MeasuringType,
+  MeasuringTypeLengthUnit,
+  MeasuringTypeWeightUnit,
+} from '../../models/enums/internal/MeasuringType';
+import {NgOptimizedImage} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dog-breed-api',
   imports: [NgOptimizedImage],
   templateUrl: './dog-breed-api.component.html',
-  styleUrl: './dog-breed-api.component.scss'
+  styleUrl: './dog-breed-api.component.scss',
 })
 export class DogBreedApiComponent {
-
   // Expose to template
   MeasuringType = MeasuringType;
   // Expose to template
@@ -20,17 +23,20 @@ export class DogBreedApiComponent {
   // Expose to template
   MeasuringTypeWeightUnit = MeasuringTypeWeightUnit;
 
-
   dogBreedDetails?: ExternalBreed;
 
   measuringType: MeasuringType = MeasuringType.METRIC;
 
-  constructor(private dogService: DogService, private router: Router) { }
+  constructor(
+    private dogService: DogService,
+    private router: Router,
+  ) {}
 
   @Input()
   set id(value: string) {
-    this.dogService.getBreed(+value)
-      .subscribe(externalDogBreed => this.dogBreedDetails = externalDogBreed);
+    this.dogService
+      .getBreed(+value)
+      .subscribe(externalDogBreed => (this.dogBreedDetails = externalDogBreed));
   }
 
   onPressSwitchMeasuringType() {
@@ -42,7 +48,7 @@ export class DogBreedApiComponent {
     this.measuringType = MeasuringType.IMPERIAL;
   }
 
-  getInMeasuringType<T>(object: {imperial: T, metric: T}): T {
+  getInMeasuringType<T>(object: {imperial: T; metric: T}): T {
     if (this.measuringType === MeasuringType.IMPERIAL) {
       return object.imperial;
     }
@@ -57,5 +63,4 @@ export class DogBreedApiComponent {
   onPressNextPage(currentId: number) {
     this.router.navigate([`/dogs/${currentId + 1}`]);
   }
-
 }

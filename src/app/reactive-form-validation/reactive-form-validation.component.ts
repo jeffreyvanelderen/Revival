@@ -1,7 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {Component} from '@angular/core';
 import {FormControl, ReactiveFormsModule, Validators} from '@angular/forms';
-import { ONLY_LETTERS_ERROR, onlyLetters } from '../../form-validators';
+import {ONLY_LETTERS_ERROR, onlyLetters} from '../../form-validators';
 
 @Component({
   selector: 'app-reactive-form-validation',
@@ -10,7 +10,6 @@ import { ONLY_LETTERS_ERROR, onlyLetters } from '../../form-validators';
   styleUrl: './reactive-form-validation.component.scss',
 })
 export class ReactiveFormValidationComponent {
-
   // Expose variable to template
   ONLY_LETTERS_ERROR = ONLY_LETTERS_ERROR;
 

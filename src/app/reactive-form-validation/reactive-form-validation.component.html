@@ -16,7 +16,10 @@
         Name is required
       } @else if (nameFormControl.hasError('minlength')) {
         Name should be at least 4 characters
-      } @else if (nameFormControl.hasError('pattern') || nameFormControl.hasError(ONLY_LETTERS_ERROR)) {
+      } @else if (
+        nameFormControl.hasError('pattern') ||
+        nameFormControl.hasError(ONLY_LETTERS_ERROR)
+      ) {
         Name contains invalid characters. Use only letters and spaces.
       }
     </p>

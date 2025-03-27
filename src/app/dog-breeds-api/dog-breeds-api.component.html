@@ -1,9 +1,11 @@
 <p>api-example - DOG API</p>
 
 <div class="breedContainer">
-    @for (breed of breeds; track breed.id) {
-        <button class="breedButton" (click)="onPressBreed(breed.id)"><p>{{breed.id}}: {{breed.name}}</p></button>
-    }
+  @for (breed of breeds; track breed.id) {
+    <button class="breedButton" (click)="onPressBreed(breed.id)">
+      <p>{{ breed.id }}: {{ breed.name }}</p>
+    </button>
+  }
 </div>
 
 <button (click)="fetchMoreBreeds()"><p>Fetch more breeds</p></button>
