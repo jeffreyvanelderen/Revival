@@ -16,6 +16,13 @@ Download node_modules
 npm install
 ```
 
+Create `.env` with the needed properties, see `.env-example`. [You might need to create your own dog api key!](https://thedogapi.com/signup)
+
+```.env
+NG_APP_DOG_API_KEY=123
+```
+
+
 To start a local development server, run:
 
 ```bash

@@ -9,6 +9,8 @@ import {SecondSubPageComponent} from './second-sub-page/second-sub-page.componen
 import {GeneralComponent} from './general/general.component';
 import {isAuthenticatedGuard} from '../guards/is-authenticated/is-authenticated.guard';
 import {ProfileComponent} from './profile/profile.component';
+import { DogBreedsApiComponent } from './dog-breeds-api/dog-breeds-api.component';
+import { DogBreedApiComponent } from './dog-breed-api/dog-breed-api.component';
 
 /*
     The order of routes is important because the Router uses a first-match wins strategy when matching routes, so more specific routes should be placed above less specific routes. 
@@ -21,6 +23,9 @@ export const routes: Routes = [
 
   {path: 'first-page/:id', component: FirstPageComponent},
   {path: 'second-page', component: SecondPageComponent},
+
+  {path: 'dogs', component: DogBreedsApiComponent},
+  {path: 'dogs/:id', component: DogBreedApiComponent},
 
   /* Nested routes */
   {

@@ -1,0 +1,28 @@
+<p>Dog breed: {{dogBreedDetails?.name || "Unknown"}}</p>
+
+@if (dogBreedDetails) {
+    @if(dogBreedDetails.image?.url) {
+        <img [src]="dogBreedDetails.image!.url" [width]="dogBreedDetails.image!.width" [height]="dogBreedDetails.image!.height" />
+    }
+
+    <div class="row">
+        <p class="label">Weight: </p> <p>{{getInMeasuringType(dogBreedDetails.weight)}} {{MeasuringTypeWeightUnit[this.measuringType]}}</p>
+    </div>
+    <div class="row">
+        <p class="label">Bred for: </p> <p>{{dogBreedDetails.bred_for}}</p>
+    </div>
+    <div class="row">
+        <p class="label">Height: </p> <p>{{getInMeasuringType(dogBreedDetails.height)}} {{MeasuringTypeLengthUnit[this.measuringType]}}</p>
+    </div>
+    <div class="row">
+        <p class="label">Life span:</p> <p>{{dogBreedDetails.life_span}}</p>
+    </div>
+    <div class="row">
+        <p class="label">Origin: </p> <p>{{dogBreedDetails.origin}}</p>
+    </div>
+    <div class="row">
+        <p class="label">Temperament: </p> <p>{{dogBreedDetails.temperament}}</p>
+    </div>
+}
+
+<button (click)="onPressSwitchMeasuringType()"><p>Switch imperial/metric</p></button>

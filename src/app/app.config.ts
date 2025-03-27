@@ -7,6 +7,7 @@ import {
 
 import {routes} from './app.routes';
 import {HobbyService} from '../services/hobby.service';
+import { provideHttpClient, withFetch, withInterceptors, withJsonpSupport } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,5 +26,13 @@ export const appConfig: ApplicationConfig = {
 
     /* Global provider */
     // { provide: HobbyService },
+
+    // Add http client for dependency injection -> private http: HttpClient
+    provideHttpClient(
+      // use fetch instead of the older XMLHttpRequest api
+      withFetch(),
+      // withInterceptors(),
+      // withJsonpSupport(),
+    )
   ],
 };

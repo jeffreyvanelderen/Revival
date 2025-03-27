@@ -1,0 +1,7 @@
+<p>api-example - DOG API</p>
+
+<button (click)="onPressFetchBreeds()"><p>Fetch breeds</p></button>
+
+@for (breed of breeds; track breed.id) {
+    <button class="breedButton" (click)="onPressBreed(breed.id)"><p>{{breed.id}}: {{breed.name}}</p></button>
+}
