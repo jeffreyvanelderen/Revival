@@ -12,12 +12,19 @@ import { Router } from '@angular/router';
 export class DogBreedsApiComponent {
 
   breeds: ExternalBreed[] = [];
+  page = 0;
+  limit = 10;
 
-  constructor(private dogService: DogService, private router: Router) { }
+  constructor(private dogService: DogService, private router: Router) {
+    this.fetchMoreBreeds();
+  }
 
-  onPressFetchBreeds() {
-    this.dogService.getBreeds()
-      .subscribe(value => this.breeds.push(...value));
+  fetchMoreBreeds() {
+    this.dogService.getBreeds({page: this.page, limit: this.limit})
+      .subscribe(value => {
+        this.breeds.push(...value);
+        this.page += 1;
+    });
   }
 
   onPressBreed(id: number) {

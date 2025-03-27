@@ -1,8 +1,8 @@
 <p>Dog breed: {{dogBreedDetails?.name || "Unknown"}}</p>
 
 @if (dogBreedDetails) {
-    @if(dogBreedDetails.image?.url) {
-        <img [src]="dogBreedDetails.image!.url" [width]="dogBreedDetails.image!.width" [height]="dogBreedDetails.image!.height" />
+    @if(!!dogBreedDetails.image?.url) {
+        <img [ngSrc]="dogBreedDetails.image!.url" [width]="dogBreedDetails.image!.width" [height]="dogBreedDetails.image!.height" />
     }
 
     <div class="row">
@@ -26,3 +26,8 @@
 }
 
 <button (click)="onPressSwitchMeasuringType()"><p>Switch imperial/metric</p></button>
+
+<div class="button-container-row">
+    <button (click)="onPressPreviousPage()"><p>Previous</p></button>
+    <button (click)="onPressNextPage()"><p>Next</p></button>
+</div>
