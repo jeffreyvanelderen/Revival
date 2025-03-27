@@ -27,7 +27,9 @@
 
 <button (click)="onPressSwitchMeasuringType()"><p>Switch imperial/metric</p></button>
 
-<div class="button-container-row">
-    <button (click)="onPressPreviousPage()"><p>Previous</p></button>
-    <button (click)="onPressNextPage()"><p>Next</p></button>
+@if (dogBreedDetails?.id) {
+    <div class="button-container-row">
+    <button [disabled]="dogBreedDetails!.id === 1" (click)="onPressPreviousPage(dogBreedDetails!.id)"><p>Previous</p></button>
+    <button (click)="onPressNextPage(dogBreedDetails!.id)"><p>Next</p></button>
 </div>
+}

@@ -50,12 +50,12 @@ export class DogBreedApiComponent {
     return object.metric;
   }
 
-  onPressPreviousPage() {
-    this.router.navigate([`/dogs/${(this.dogBreedDetails?.id || 2) - 1}`]);
+  onPressPreviousPage(currentId: number) {
+    this.router.navigate([`/dogs/${currentId - 1}`]);
   }
 
-  onPressNextPage() {
-    this.router.navigate([`/dogs/${(this.dogBreedDetails?.id || 1) + 1}`]);
+  onPressNextPage(currentId: number) {
+    this.router.navigate([`/dogs/${currentId + 1}`]);
   }
 
 }
