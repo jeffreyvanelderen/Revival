@@ -13,6 +13,7 @@ export class CalculatorComponent {
 
   symbols: Symbol[] = [];
   isOperatorDisabled = this.isLastSymbolOperator;
+  displayEndResult: number | undefined;
 
 
   // Exercise: single event handler
@@ -21,71 +22,66 @@ export class CalculatorComponent {
       this.symbols = [];
       this.isLastSymbolOperator = false;
       this.isFirstSymbolDigit = false;
+      this.displayEndResult = undefined;
       return;
     }
 
     this.isLastSymbolOperator = symbol.type === Operator.OPERATOR;
-
-    if (symbol.value === Operator.DIGIT) {
-      // Store in symbols but don't calcualte
-      this.symbols.push(symbol);
-      return;
-    }
-
     this.symbols.push(symbol);
 
     console.log(JSON.stringify(this.symbols));
 
-    this.calculate();
-  }
-
-  // 5 + 3 - 8 * 12 / 2 =
-  calculate() {
-    // If we have more than 1 DIGIT entry, we can already calculate something
-    const digits: number[] = this.symbols
-      .filter(symbol => symbol.type === Operator.DIGIT)
-      .map(symbol => +symbol.value);
-
-    const shouldCalculate = digits.length > 1;
-
-    const operators: string[] = this.symbols
-      .filter(symbol => symbol.type === Operator.OPERATOR).map(symbol => symbol.value);
-
-    if (shouldCalculate) {
-      const [firstDigit, secondDigit] = digits;
-      const [operator] = operators;
-
-      let result = 0;
-
-      switch (operator) {
-        case "*":
-          result = firstDigit * secondDigit;
-          break;
-        case "+":
-          result = firstDigit + secondDigit;
-          break;
-        case "-":
-          result = firstDigit - secondDigit;
-          break;
-        case "/":
-          result = firstDigit / secondDigit;
-          break;
-        case "=":
-        // TODO calculate everything;
-      }
-
-      // Remove first 3 symbols we already calculated (2 digits and 1 operator)
-      this.symbols = this.symbols.slice(3)
-
-      // Add new result to the beginning of the symbols:
-      this.symbols.unshift({ type: Operator.DIGIT, value: result.toString() });
-
-      console.log(`Calculated stuff. Symbols array = ${JSON.stringify(this.symbols)}`)
+    if (symbol.value === "=") {
+      this.calculate();
     }
   }
 
+  // 0 1 2 3 4 5 6 -->>> even is DIGIT, oneven is OPERATOR
+  // 5 + 3 - 8 + 12 - 2 =
+  calculate() {
+    let endResult: number = +this.symbols[0].value;
+
+    const jumpBy = 2;
+    for (let i = jumpBy; i <= this.symbols.length - jumpBy; i += jumpBy) {
+      const firstDigit = endResult;
+      const operator = this.symbols[i - 1].value;
+      const secondDigit = +this.symbols[i].value;
+
+      endResult = this.calculateForPart(firstDigit, secondDigit, operator);
+
+      console.log(`index=${i} -->>> ${firstDigit} ${operator} ${secondDigit} = ${endResult}`);
+    }
+
+    this.displayEndResult = endResult;
+
+    console.log(`Calculated stuff. end result = ${endResult}`);
+  }
+
+  calculateForPart(firstDigit: number, secondDigit: number, operator: string): number {
+    let result = 0;
+
+    switch (operator) {
+      case "*":
+        result = firstDigit * secondDigit;
+        break;
+      case "+":
+        result = firstDigit + secondDigit;
+        break;
+      case "-":
+        result = firstDigit - secondDigit;
+        break;
+      case "/":
+        result = firstDigit / secondDigit;
+        break;
+      default:
+        throw new Error(`Uknown operator: ${operator}`)
+    }
+
+    return result;
+  }
+
   getReadableDisplay() {
-    return this.symbols.map(symbol => symbol.value).join(' ')
+    return `${this.symbols.map(symbol => symbol.value).join(' ')} ${this.displayEndResult !== undefined ? this.displayEndResult : ''}`
   }
 
 }

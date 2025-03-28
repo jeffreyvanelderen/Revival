@@ -32,10 +32,10 @@
     </div>
 
     <div>
-        <app-calculator-button value="*" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
+        <app-calculator-button value="*" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="true" />
         <app-calculator-button value="+" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
         <app-calculator-button value="-" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
-        <app-calculator-button value="/" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
+        <app-calculator-button value="/" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="true" />
         <app-calculator-button value="=" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
         <app-calculator-button value="CLEAR" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
     </div>
