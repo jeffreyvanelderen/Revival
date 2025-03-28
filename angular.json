@@ -73,7 +73,7 @@
           "options": {}
         },
         "extract-i18n": {
-          "builder": "@ngx-env/builder:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {}
         },
         "test": {
@@ -102,6 +102,9 @@
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
+      },
+      "i18n": {
+        "sourceLocale": "nl-BE"
       }
     }
   },

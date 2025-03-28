@@ -17,7 +17,7 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "types": ["node"]
+    "types": ["node", "@angular/localize"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

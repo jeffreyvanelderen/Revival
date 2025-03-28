@@ -1,0 +1,24 @@
+<!--
+    Use the i18n attribute to mark a static text message in your component templates for translation. 
+    Place it on every element tag that contains fixed text you want to translate.
+-->
+<h1 i18n="i18n_metadata">String to translate</h1>
+
+<h1 i18n>String to translate, without metadata in i18n attribute</h1>
+
+
+<!--
+    using conditional statement with i18n
+
+    The following <div> tag will display translated text as part of div and aria-label based on toggle status
+-->
+<button type="button" (click)="toggleDisplay()">Toggle</button>
+<div i18n [attr.aria-label]="toggleAriaLabel()">{{isToggled()}}</div>
+
+
+
+<img [src]="logo" title="Angular logo" alt="Angular logo" width="30" height="30">
+<!--
+    To mark an attribute for translation, change above img tag to: i18n-title title="Angular logo"
+-->
+<img [src]="logo" i18n-title title="Angular logo" alt="Angular logo" width="30" height="30" />

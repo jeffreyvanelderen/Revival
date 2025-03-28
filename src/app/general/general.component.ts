@@ -24,6 +24,8 @@ import {StorageService} from '../../services/storage/storage.service';
 import {RouterLink} from '@angular/router';
 import {StorageKey} from '../../models/enums/internal/StorageKey';
 import {ReactiveFormValidationComponent} from '../reactive-form-validation/reactive-form-validation.component';
+import { PipesUsingI18nComponent } from "../pipes-using-i18n/pipes-using-i18n.component";
+import { UsingI18nComponent } from "../using-i18n/using-i18n.component";
 
 @Component({
   selector: 'app-general',
@@ -54,7 +56,9 @@ import {ReactiveFormValidationComponent} from '../reactive-form-validation/react
     NgStyleDirectiveComponent,
     NgModelDirectiveComponent,
     ReactiveFormValidationComponent,
-  ],
+    PipesUsingI18nComponent,
+    UsingI18nComponent
+],
   templateUrl: './general.component.html',
   styleUrl: './general.component.scss',
 })
