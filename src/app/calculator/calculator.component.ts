@@ -19,10 +19,7 @@ export class CalculatorComponent {
   // Exercise: single event handler
   onPressButton(symbol: Symbol) {
     if (symbol.value === Operator.CLEAR) {
-      this.symbols = [];
-      this.isLastSymbolOperator = false;
-      this.isFirstSymbolDigit = false;
-      this.displayEndResult = undefined;
+      this.clear();
       return;
     }
 
@@ -31,16 +28,7 @@ export class CalculatorComponent {
     // If user enters multiple digits after each other, allow it and adjust last 2 items to 1 digit symbol by appending both
     const lastItem = this.symbols[this.symbols.length - 1];
     if (symbol.type === Operator.DIGIT && lastItem?.type === Operator.DIGIT) {
-      const lastDigitItem = lastItem.value;
-
-      // Remove last item
-      this.symbols = this.symbols.slice(0, this.symbols.length - 1);
-
-      // Append new digit at end of symbols, which contains the appended last 2 digits
-      this.symbols.push({
-        type: Operator.DIGIT,
-        value: `${lastDigitItem}${symbol.value}`,
-      });
+      this.combineDigits(lastItem, symbol);
       return;
     }
 
@@ -99,6 +87,26 @@ export class CalculatorComponent {
 
   getReadableDisplay() {
     return `${this.symbols.map(symbol => symbol.value).join(' ')} ${this.displayEndResult !== undefined ? this.displayEndResult : ''}`
+  }
+
+  combineDigits(lastItem: Symbol, currentItem: Symbol) {
+    const lastDigitItem = lastItem.value;
+
+    // Remove last item
+    this.symbols = this.symbols.slice(0, this.symbols.length - 1);
+
+    // Append new digit at end of symbols, which contains the appended last 2 digits
+    this.symbols.push({
+      type: Operator.DIGIT,
+      value: `${lastDigitItem}${currentItem.value}`,
+    });
+  }
+
+  clear() {
+    this.symbols = [];
+    this.isLastSymbolOperator = false;
+    this.isFirstSymbolDigit = false;
+    this.displayEndResult = undefined;
   }
 
 }
