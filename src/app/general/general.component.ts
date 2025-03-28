@@ -26,6 +26,7 @@ import {StorageKey} from '../../models/enums/internal/StorageKey';
 import {ReactiveFormValidationComponent} from '../reactive-form-validation/reactive-form-validation.component';
 import { PipesUsingI18nComponent } from "../pipes-using-i18n/pipes-using-i18n.component";
 import { UsingI18nComponent } from "../using-i18n/using-i18n.component";
+import { CalculatorComponent } from "../calculator/calculator.component";
 
 @Component({
   selector: 'app-general',
@@ -57,7 +58,8 @@ import { UsingI18nComponent } from "../using-i18n/using-i18n.component";
     NgModelDirectiveComponent,
     ReactiveFormValidationComponent,
     PipesUsingI18nComponent,
-    UsingI18nComponent
+    UsingI18nComponent,
+    CalculatorComponent
 ],
   templateUrl: './general.component.html',
   styleUrl: './general.component.scss',

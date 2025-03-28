@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div #display>
+        <p #displayText>{{getReadableDisplay()}}</p>
+    </div>
+
+    <div class="row">
+    <div>
+        <div class="row">
+            <app-calculator-button value=1 (onPress)="onPressButton($event)" />
+            <app-calculator-button value=2 (onPress)="onPressButton($event)" />
+            <app-calculator-button value=3 (onPress)="onPressButton($event)" />
+        </div>
+
+        <div class="row">
+            <app-calculator-button value=4 (onPress)="onPressButton($event)" />
+            <app-calculator-button value=5 (onPress)="onPressButton($event)" />
+            <app-calculator-button value=6 (onPress)="onPressButton($event)" />
+        </div>
+
+        <div class="row">
+            <app-calculator-button value=7 (onPress)="onPressButton($event)" />
+            <app-calculator-button value=8 (onPress)="onPressButton($event)" />
+            <app-calculator-button value=9 (onPress)="onPressButton($event)" />
+        </div>
+    </div>
+
+    <div>
+        <app-calculator-button value="*" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
+        <app-calculator-button value="+" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
+        <app-calculator-button value="-" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
+        <app-calculator-button value="/" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
+        <app-calculator-button value="=" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
+        <app-calculator-button value="CLEAR" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
+    </div>
+    </div>
+
+</div>
