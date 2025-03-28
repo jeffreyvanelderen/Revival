@@ -27,6 +27,23 @@ export class CalculatorComponent {
     }
 
     this.isLastSymbolOperator = symbol.type === Operator.OPERATOR;
+
+    // If user enters multiple digits after each other, allow it and adjust last 2 items to 1 digit symbol by appending both
+    const lastItem = this.symbols[this.symbols.length - 1];
+    if (symbol.type === Operator.DIGIT && lastItem?.type === Operator.DIGIT) {
+      const lastDigitItem = lastItem.value;
+
+      // Remove last item
+      this.symbols = this.symbols.slice(0, this.symbols.length - 1);
+
+      // Append new digit at end of symbols, which contains the appended last 2 digits
+      this.symbols.push({
+        type: Operator.DIGIT,
+        value: `${lastDigitItem}${symbol.value}`,
+      });
+      return;
+    }
+
     this.symbols.push(symbol);
 
     console.log(JSON.stringify(this.symbols));
