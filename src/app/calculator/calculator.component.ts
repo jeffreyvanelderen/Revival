@@ -8,19 +8,31 @@ import { CalculatorButtonComponent, Operator, Symbol } from "../calculator-butto
   styleUrl: './calculator.component.scss'
 })
 export class CalculatorComponent {
+  private isFirstSymbolDigit: boolean = false;
+  private isLastSymbolOperator: boolean = false;
+
   symbols: Symbol[] = [];
-  isLastSymbolOperator: boolean = false;
+  isOperatorDisabled = this.isLastSymbolOperator;
+
 
   // Exercise: single event handler
   onPressButton(symbol: Symbol) {
     if (symbol.value === Operator.CLEAR) {
       this.symbols = [];
       this.isLastSymbolOperator = false;
+      this.isFirstSymbolDigit = false;
+      return;
+    }
+
+    this.isLastSymbolOperator = symbol.type === Operator.OPERATOR;
+
+    if (symbol.value === Operator.DIGIT) {
+      // Store in symbols but don't calcualte
+      this.symbols.push(symbol);
       return;
     }
 
     this.symbols.push(symbol);
-    this.isLastSymbolOperator = symbol.type === Operator.OPERATOR;
 
     console.log(JSON.stringify(this.symbols));
 

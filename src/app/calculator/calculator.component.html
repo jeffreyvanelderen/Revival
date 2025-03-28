@@ -1,7 +1,7 @@
 <div class="container">
 
     <div #display>
-        <p #displayText>{{getReadableDisplay()}}</p>
+        <h3 #displayText>{{getReadableDisplay()}}</h3>
     </div>
 
     <div class="row">
@@ -23,15 +23,21 @@
             <app-calculator-button value=8 (onPress)="onPressButton($event)" />
             <app-calculator-button value=9 (onPress)="onPressButton($event)" />
         </div>
+            
+        <div class="row">
+            <div class="buttonFiller"></div>
+            <app-calculator-button value=0 (onPress)="onPressButton($event)" />
+            <div class="buttonFiller"></div>
+        </div>
     </div>
 
     <div>
-        <app-calculator-button value="*" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
-        <app-calculator-button value="+" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
-        <app-calculator-button value="-" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
-        <app-calculator-button value="/" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
-        <app-calculator-button value="=" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
-        <app-calculator-button value="CLEAR" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isLastSymbolOperator" />
+        <app-calculator-button value="*" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
+        <app-calculator-button value="+" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
+        <app-calculator-button value="-" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
+        <app-calculator-button value="/" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
+        <app-calculator-button value="=" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
+        <app-calculator-button value="CLEAR" (onPress)="onPressButton($event)" [isOperator]=true [disabled]="isOperatorDisabled" />
     </div>
     </div>
 

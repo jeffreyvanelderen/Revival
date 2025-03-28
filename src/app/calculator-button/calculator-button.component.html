@@ -1,5 +1,5 @@
 
-<button (click)="onPressButton()" [disabled]="disabled">
+<button [ngClass]="isOperator ? 'orangeBorder' : ''" (click)="onPressButton()" [disabled]="disabled">
     <p>
         {{value}}
     </p>

@@ -1,8 +1,9 @@
+import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-calculator-button',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './calculator-button.component.html',
   styleUrl: './calculator-button.component.scss'
 })

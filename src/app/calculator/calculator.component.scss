@@ -1,7 +1,8 @@
 .container {
     display: flex;
+    flex: 1;
     padding: 16px;
-    flex-wrap: wrap;
+    flex-direction: column;
     
     border: 1px solid black;
     border-radius: 16px;
@@ -13,6 +14,10 @@
     flex-direction: row;
 }
 
+.buttonFiller {
+    min-width: 100px;
+    height: 60px;
+}
 
 
 #display {
@@ -22,7 +27,7 @@
     background-color: white;
 
     justify-items: center;
-    justify-items: center;
+    align-items: center;
 }
 
 #displayText {

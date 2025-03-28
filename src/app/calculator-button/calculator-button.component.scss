@@ -1,12 +1,17 @@
 
 button {
     display: flex;
-    width: 100px;
+    flex: 1;
+    min-width: 100px;
     height: 60px;
     
     justify-content: center;
     align-items: center;
     background-color: darkgray;
+}
+
+.orangeBorder {
+    border: 1px solid orange;
 }
 
 p {
