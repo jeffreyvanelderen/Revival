@@ -1,4 +1,4 @@
-import {ApplicationConfig, provideZoneChangeDetection} from '@angular/core';
+import {ApplicationConfig, provideZoneChangeDetection, isDevMode} from '@angular/core';
 import {
   provideRouter,
   withComponentInputBinding,
@@ -13,6 +13,8 @@ import {
   withInterceptors,
   withJsonpSupport,
 } from '@angular/common/http';
+import { TranslocoHttpLoader } from './transloco-loader';
+import { provideTransloco } from '@jsverse/transloco';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -38,6 +40,15 @@ export const appConfig: ApplicationConfig = {
       withFetch(),
       // withInterceptors(),
       // withJsonpSupport(),
-    ),
+    ), provideHttpClient(), provideTransloco({
+        config: { 
+          availableLangs: ['en', 'nl', 'fr'],
+          defaultLang: 'en',
+          // Remove this option if your application doesn't support changing language in runtime.
+          reRenderOnLangChange: true,
+          prodMode: !isDevMode(),
+        },
+        loader: TranslocoHttpLoader
+      }),
   ],
 };

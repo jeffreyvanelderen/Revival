@@ -1,4 +1,4 @@
-import { Component, computed, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-using-i18n',
@@ -11,7 +11,7 @@ export class UsingI18nComponent implements OnInit {
   isToggled = signal<boolean>(false);
   name = 'Jeffrey';
 
-  toggleAriaLabel = computed(() => $localize`:Toggle Button|A button to toggle status:${this.isToggled() ? 'Show' : 'Hide'}`);
+  // toggleAriaLabel = computed(() => $localize`:Toggle Button|A button to toggle status:${this.isToggled() ? 'Show' : 'Hide'}`);
 
   logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png";
 
@@ -26,11 +26,11 @@ export class UsingI18nComponent implements OnInit {
 
   ngOnInit(): void {
     // How to translate in a component
-    console.log($localize`This should translate`);
+    // console.log($localize`This should translate`);
 
-    console.log($localize`:{i18n_metadata}:string to translate`);
+    // console.log($localize`:{i18n_metadata}:string to translate`);
 
-    console.log($localize`:{i18n_metadata}:string to translate with some interpolation: ${this.name}`);
+    // console.log($localize`:{i18n_metadata}:string to translate with some interpolation: ${this.name}`);
   }
 
   toggleDisplay() {
