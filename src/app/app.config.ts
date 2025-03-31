@@ -1,24 +1,21 @@
-import {ApplicationConfig, provideZoneChangeDetection, isDevMode} from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection, isDevMode } from '@angular/core';
 import {
   provideRouter,
   withComponentInputBinding,
-  withRouterConfig,
 } from '@angular/router';
 
-import {routes} from './app.routes';
-import {HobbyService} from '../services/hobby.service';
+import { routes } from './app.routes';
 import {
   provideHttpClient,
   withFetch,
-  withInterceptors,
-  withJsonpSupport,
 } from '@angular/common/http';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@jsverse/transloco';
+import { Language } from '../models/enums/internal/language.enum';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({eventCoalescing: true}),
+    provideZoneChangeDetection({ eventCoalescing: true }),
 
     /* Import router with given routes */
     provideRouter(
@@ -40,15 +37,16 @@ export const appConfig: ApplicationConfig = {
       withFetch(),
       // withInterceptors(),
       // withJsonpSupport(),
-    ), provideHttpClient(), provideTransloco({
-        config: { 
-          availableLangs: ['en', 'nl', 'fr'],
-          defaultLang: 'en',
-          // Remove this option if your application doesn't support changing language in runtime.
-          reRenderOnLangChange: true,
-          prodMode: !isDevMode(),
-        },
-        loader: TranslocoHttpLoader
-      }),
+    ),
+    provideTransloco({
+      config: {
+        availableLangs: Object.values(Language),
+        defaultLang: Language.EN,
+        // Remove this option if your application doesn't support changing language in runtime.
+        reRenderOnLangChange: true,
+        prodMode: !isDevMode(),
+      },
+      loader: TranslocoHttpLoader
+    }),
   ],
 };

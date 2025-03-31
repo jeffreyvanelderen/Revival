@@ -27,6 +27,7 @@ import {ReactiveFormValidationComponent} from '../reactive-form-validation/react
 import { PipesUsingI18nComponent } from "../pipes-using-i18n/pipes-using-i18n.component";
 import { UsingI18nComponent } from "../using-i18n/using-i18n.component";
 import { CalculatorComponent } from "../calculator/calculator.component";
+import { UsingTranslocoComponent } from "../using-transloco/using-transloco.component";
 
 @Component({
   selector: 'app-general',
@@ -59,7 +60,8 @@ import { CalculatorComponent } from "../calculator/calculator.component";
     ReactiveFormValidationComponent,
     PipesUsingI18nComponent,
     UsingI18nComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    UsingTranslocoComponent
 ],
   templateUrl: './general.component.html',
   styleUrl: './general.component.scss',

@@ -1,0 +1,39 @@
+<p>using-transloco works!</p>
+
+<!-- 
+    The structural directive is the recommended approach as it is DRY (Don't Repeat Yourself) and efficient. 
+    It creates a single subscription per template, making it an optimal choice for translations:
+-->
+<p>Using ng-container *transloco="let t"</p>
+<ng-container *transloco="let t">
+    <p>{{Language.NL}}</p>
+    <p>{{t('helloX', {x: 'Jeffrey'})}}</p>
+    <p [title]="t('helloX', {x: 'Jeffrey'})"></p>
+</ng-container>
+
+<!-- You can specify another language to translate in -->
+ <p>Using ng-container *transloco="let t; lang: Language.FR"</p>
+<ng-container *transloco="let t; lang: Language.FR">
+    <p>{{Language.FR}}</p>
+    <p>{{t('helloX', {x: 'Jeffrey'})}}</p>
+    <p [title]="t('helloX', {x: 'Jeffrey'})"></p>
+</ng-container>
+
+<!-- Specify a prefix so you don't need to repeat the parent key -->
+ <p>Using ng-container *transloco="let t; prefix: 'nested'"</p>
+<ng-container *transloco="let t; prefix: 'nested'">
+    <p>{{t('nestedProperty')}}</p>
+</ng-container>
+
+<!-- 
+    You can also use the translate pipe with parameters (also possible with bindings and input -> <span [attr.alt]="'hello' | transloco">Attribute</span>)
+    | transloco : params : 'language'
+-->
+<p>Using pipe</p>
+<p>{{'helloX' | transloco : {x: 'Jeffrey'} }}</p>
+
+<!-- 
+    You can also use attribute directives
+-->
+<p>Using attribute directives</p>
+<span transloco="helloX" [translocoParams]="{ x: 'Jeffrey' }" [translocoLang]="Language.NL"></span>
