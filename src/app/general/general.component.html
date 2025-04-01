@@ -98,5 +98,15 @@
 <app-using-transloco />
 <app-divider />
 
+<h1>Accessibility Example</h1>
+<label for="progress-value">
+  Enter an example progress value
+  <input id="progress-value" type="number" min="0" max="100"
+      [value]="progress" (input)="setProgress($event)">
+</label>
+
+<app-accessible-progressbar [value]="progress" />
+<app-divider />
+
 <app-calculator />
 <app-divider />
